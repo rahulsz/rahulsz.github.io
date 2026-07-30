@@ -5,7 +5,7 @@ categories: [Walkthroughs, Linux Escalation]
 tags: [linux-privesc, sudo-abuse, Linux Escalation, pt-garage]
 ---
 
-# PTG Sudoers - Linux Privilege Escalation
+![Intro Banner](/assets/img/banners/websecurity_banner_1785397298913.png)
 
 - **Box:** PTG Sudoers
 - **Vulnerability:** Sudo Abuse (`NOPASSWD` execution of `/usr/bin/less`)

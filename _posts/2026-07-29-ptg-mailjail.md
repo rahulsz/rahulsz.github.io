@@ -5,7 +5,8 @@ categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, roundcube, ftp, keepass, ld_preload, privesc, web-exploitation, WebSecurity]
 ---
 
-# MailJail
+![Intro Banner](/assets/img/banners/websecurity_banner_1785397298913.png)
+
 **CVE-2025-49113 — Roundcube RCE → LD_PRELOAD SUID PrivEsc**
 
 ## Phase 1 — Recon

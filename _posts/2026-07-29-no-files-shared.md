@@ -5,7 +5,7 @@ categories: [Walkthroughs, Linux Escalation]
 tags: [linux, privilege-escalation, nfs, ssh, Linux Escalation, pt-garage]
 ---
 
-# NFS Privilege Escalation — CTF Writeup
+![Intro Banner](/assets/img/banners/linux_banner_1785397264071.png)
 
 During the reconnaissance phase, an Nmap scan was performed against the target system.
 

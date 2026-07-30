@@ -5,7 +5,7 @@ categories: [Walkthroughs, Linux Escalation]
 tags: [linux-privesc, sgid-abuse, Linux Escalation, pt-garage]
 ---
 
-# PTG Superid - Linux Privilege Escalation
+![Intro Banner](/assets/img/banners/websecurity_banner_1785397298913.png)
 
 - **Box:** PTG Superid
 - **Vulnerability:** SGID Abuse (`/usr/bin/sed`)

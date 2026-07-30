@@ -5,7 +5,8 @@ categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, flask, command-injection, cron, privesc, web-exploitation, WebSecurity]
 ---
 
-# Provision
+![Intro Banner](/assets/img/banners/websecurity_banner_1785397298913.png)
+
 **Command Injection (Flask ping utility) → Root Key via Cron**
 
 ## Phase 1 — Recon

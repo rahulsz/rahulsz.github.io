@@ -5,7 +5,8 @@ categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, ssh, credential-leak, privesc, web-exploitation, WebSecurity]
 ---
 
-# GraSSHopper
+![Intro Banner](/assets/img/banners/websecurity_banner_1785397298913.png)
+
 **SSH Credential Leak + Root Private Key Reuse**
 
 ## Phase 1 — Recon

@@ -5,7 +5,8 @@ categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, apache, path-traversal, rce, gtfobins, web-exploitation, WebSecurity]
 ---
 
-# FaultyLine
+![Intro Banner](/assets/img/banners/websecurity_banner_1785397298913.png)
+
 **CVE-2021-41773 / CVE-2021-42013** — Apache 2.4.49 Path Traversal + RCE
 
 ## Phase 1 — Recon

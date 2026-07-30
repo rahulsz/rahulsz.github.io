@@ -5,7 +5,8 @@ categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, cve-2025-4123, web-exploitation, WebSecurity]
 ---
 
-# FaultyJail
+![Intro Banner](/assets/img/banners/websecurity_banner_1785397298913.png)
+
 **CVE-2025-4123** — build script not yet supplied; foothold/privesc TBD
 
 ## Status

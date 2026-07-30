@@ -5,7 +5,8 @@ categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, redis, rce, cron, privesc, web-exploitation, WebSecurity]
 ---
 
-# RedPill
+![Intro Banner](/assets/img/banners/websecurity_banner_1785397298913.png)
+
 **Unauthenticated Redis RCE → Writable Cron Script**
 
 ## Phase 1 — Recon
