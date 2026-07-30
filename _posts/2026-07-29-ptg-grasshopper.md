@@ -50,8 +50,6 @@ ssh -i /tmp/root_key root@<TARGET_IP>
 cat /root/root.txt
 ```
 
-![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_6.png)
-
 ## Flags
 
 | Type | Flag | Path |

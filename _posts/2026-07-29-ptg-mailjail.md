@@ -70,10 +70,6 @@ LD_PRELOAD=/tmp/preload.so /usr/local/bin/suidprog
 cat /root/proof.txt
 ```
 
-![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_12.png)
-
-![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_13.png)
-
 ## Flags
 
 | Type | Flag | Path |

@@ -55,8 +55,6 @@ nc -lvnp 5555
 cat /root/root.txt
 ```
 
-![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_11.png)
-
 ## Flags
 
 | Type | Flag | Path |
