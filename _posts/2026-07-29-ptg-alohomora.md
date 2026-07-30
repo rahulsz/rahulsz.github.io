@@ -71,6 +71,7 @@ cat /root/root.txt
 ![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_3.png)
 
 ## Flags
+
 | Type | Flag | Path |
 |---|---|---|
 | user | 4dfa25d7a90722279448819c28bc4250 | `/home/www-data/user.txt` |

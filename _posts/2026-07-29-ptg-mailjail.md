@@ -75,6 +75,7 @@ cat /root/proof.txt
 ![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_13.png)
 
 ## Flags
+
 | Type | Flag | Path |
 |---|---|---|
 | user | 6a99c575ab87f8c7d1ed1e52e7e349ce | `/home/www-data/local.txt` |

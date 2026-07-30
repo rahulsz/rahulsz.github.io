@@ -18,6 +18,7 @@ Send over the `build.sh` (or the CVE-2025-4123.zip) and I'll fill in the full wa
 ![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_5.png)
 
 ## Flags
+
 | Type | Flag | Path |
 |---|---|---|
 | user | 4279281b0fa8432ac66a8c16d805dbc2 | `/home/[user]/user.txt` |

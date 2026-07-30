@@ -58,6 +58,7 @@ cat /root/root.txt
 ![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_11.png)
 
 ## Flags
+
 | Type | Flag | Path |
 |---|---|---|
 | user | b590d10336bf79de85acb787ac8a5546 | `/home/vagrant/user.txt` |
