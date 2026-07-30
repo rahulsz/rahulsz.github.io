@@ -19,3 +19,11 @@ Send over the `build.sh` (or the CVE-2025-4123.zip) and I'll fill in the full wa
 |---|---|---|
 | user | 4279281b0fa8432ac66a8c16d805dbc2 | `/home/[user]/user.txt` |
 | root | dbc048e58e3db036957336b763e811ac | `/root/root.txt` |
+
+
+## Complete PTG Lab Screenshots
+
+<details>
+<summary>Click to view all screenshots for the PTG Lab VMs</summary>
+
+</details>

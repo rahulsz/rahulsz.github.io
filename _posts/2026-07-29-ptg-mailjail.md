@@ -74,3 +74,11 @@ cat /root/proof.txt
 |---|---|---|
 | user | 6a99c575ab87f8c7d1ed1e52e7e349ce | `/home/www-data/local.txt` |
 | root | 6a99c575ab87f8c7d1ed1e52e7e349ce | `/root/proof.txt` |
+
+
+## Complete PTG Lab Screenshots
+
+<details>
+<summary>Click to view all screenshots for the PTG Lab VMs</summary>
+
+</details>

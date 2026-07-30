@@ -54,3 +54,11 @@ cat /root/root.txt
 |---|---|---|
 | user | f7f037df5a943621d631a66e990f4df9 | `/home/www-user/user.txt` |
 | root | 688703115b1c8cb47f4b477807cec4ae | `/root/root.txt` |
+
+
+## Complete PTG Lab Screenshots
+
+<details>
+<summary>Click to view all screenshots for the PTG Lab VMs</summary>
+
+</details>

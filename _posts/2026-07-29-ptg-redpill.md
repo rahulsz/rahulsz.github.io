@@ -59,3 +59,11 @@ cat /root/root.txt
 |---|---|---|
 | user | b590d10336bf79de85acb787ac8a5546 | `/home/vagrant/user.txt` |
 | root | 3d876b826027b0200ccb6634e16dfbfa | `/root/root.txt` |
+
+
+## Complete PTG Lab Screenshots
+
+<details>
+<summary>Click to view all screenshots for the PTG Lab VMs</summary>
+
+</details>

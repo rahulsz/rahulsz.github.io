@@ -66,3 +66,17 @@ cat /root/flag.txt
 
 ---
 
+
+
+## Walkthrough Screenshots
+
+![Screenshot](/assets/ptgarage/no_files_shared/img_1_1.png)
+
+![Screenshot](/assets/ptgarage/no_files_shared/img_1_2.png)
+
+![Screenshot](/assets/ptgarage/no_files_shared/img_2_1.png)
+
+![Screenshot](/assets/ptgarage/no_files_shared/img_3_1.png)
+
+![Screenshot](/assets/ptgarage/no_files_shared/img_4_1.png)
+
