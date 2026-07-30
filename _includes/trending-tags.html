@@ -17,7 +17,7 @@
 
 {% assign tag_list = tag_list | sort_natural %}
 
-{% assign trending_tags = '' | split: '' %}
+{% assign trending_tags = 'Docker Security,Linux Escalation,Misc,Pwn,Reversing,Stegnography,WebSecurity,Windows Escalation' | split: ',' %}
 
 {% for size in size_list limit: MAX %}
   {% for tag_str in tag_list %}
