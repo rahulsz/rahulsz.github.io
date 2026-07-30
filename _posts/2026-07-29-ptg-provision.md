@@ -56,7 +56,7 @@ ssh -i /tmp/rootkey root@<TARGET_IP>
 cat /root/root.txt
 ```
 
-![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_9.png)
+![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_8.png)
 
 ## Flags
 | Type | Flag | Path |
