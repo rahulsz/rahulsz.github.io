@@ -12,6 +12,8 @@ We begin with a standard Nmap scan to identify open ports and running services o
 ```bash
 nmap -Pn -sV 172.31.10.251
 ```
+![Nmap Scan](/assets/img/walkthroughs/alohomora/alohomora_img_1.png)
+
 The scan reveals:
 - **Port 21:** vsftpd 3.0.5 (FTP)
 - **Port 22:** OpenSSH 8.2p1 (SSH)
@@ -25,9 +27,7 @@ lftp 172.31.10.251:~> ls
 lftp 172.31.10.251:/> get creds.db
 lftp 172.31.10.251:/> exit
 ```
-![lftp Enumeration](/assets/img/walkthroughs/alohomora/alohomora_img_1.png)
-
-![Downloading creds.db](/assets/img/walkthroughs/alohomora/alohomora_img_2.png)
+![lftp Enumeration](/assets/img/walkthroughs/alohomora/alohomora_img_2.png)
 
 The database file `creds.db` is actually a password-protected zip file. Using the password `spongebob`, we can unzip it and extract `creds.txt`.
 ```bash
