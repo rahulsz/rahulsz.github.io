@@ -5,7 +5,7 @@ categories: [Walkthroughs, Linux Escalation]
 tags: [linux, privilege-escalation, nfs, ssh, Linux Escalation, pt-garage]
 ---
 
-![Intro Banner](/assets/img/banners/linux_banner_1785397264071.png)
+![Intro Banner](/assets/img/custom_banners/2026-07-29-no-files-shared_banner.png)
 
 During the reconnaissance phase, an Nmap scan was performed against the target system.
 

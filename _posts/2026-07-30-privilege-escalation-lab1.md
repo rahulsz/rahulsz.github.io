@@ -5,7 +5,7 @@ categories: [Walkthroughs, Linux Escalation]
 tags: [linux-privesc, sudo-abuse, git, Linux Escalation, pt-garage]
 ---
 
-![Intro Banner](/assets/img/banners/linux_banner_1785397264071.png)
+![Intro Banner](/assets/img/custom_banners/2026-07-30-privilege-escalation-lab1_banner.png)
 
 - **Box:** Privilege Escalation Lab1
 - **Vulnerability:** Sudo Abuse via Git `core.pager` misconfiguration

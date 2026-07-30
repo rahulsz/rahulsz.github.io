@@ -5,7 +5,7 @@ categories: [Walkthroughs, Linux Escalation]
 tags: [linux-privesc, sgid-abuse, Linux Escalation, pt-garage]
 ---
 
-![Intro Banner](/assets/img/banners/websecurity_banner_1785397298913.png)
+![Intro Banner](/assets/img/custom_banners/2026-07-30-ptg-superid_banner.png)
 
 - **Box:** PTG Superid
 - **Vulnerability:** SGID Abuse (`/usr/bin/sed`)

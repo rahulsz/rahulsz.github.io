@@ -5,7 +5,7 @@ categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, gerapy, rce, django, ftp, web-exploitation, WebSecurity]
 ---
 
-![Intro Banner](/assets/img/banners/websecurity_banner_1785397298913.png)
+![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-alohomora_banner.png)
 
 **CVE-2021-43136** — Gerapy RCE (Django) via authenticated code execution
 

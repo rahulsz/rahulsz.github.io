@@ -5,7 +5,7 @@ categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, ssh, credential-leak, privesc, web-exploitation, WebSecurity]
 ---
 
-![Intro Banner](/assets/img/banners/websecurity_banner_1785397298913.png)
+![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-grasshopper_banner.png)
 
 **SSH Credential Leak + Root Private Key Reuse**
 
