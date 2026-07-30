@@ -2,7 +2,7 @@
 title: RedPill
 date: 2026-07-29 12:40:00 +0000
 categories: [Walkthroughs, WebSecurity]
-tags: [ptgarage, redis, rce, cron, privesc]
+tags: [ptgarage, redis, rce, cron, privesc, web-exploitation]
 ---
 
 # RedPill

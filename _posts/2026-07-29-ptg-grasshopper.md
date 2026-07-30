@@ -2,7 +2,7 @@
 title: GraSSHopper
 date: 2026-07-29 12:15:00 +0000
 categories: [Walkthroughs, WebSecurity]
-tags: [ptgarage, ssh, credential-leak, privesc]
+tags: [ptgarage, ssh, credential-leak, privesc, web-exploitation]
 ---
 
 # GraSSHopper
