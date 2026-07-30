@@ -60,4 +60,3 @@ image:
 9. We can replace the cookie's value in our browser, refresh the page, and confirm that it is working:
 
     ![](flag_browser.png)
-

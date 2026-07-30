@@ -210,6 +210,3 @@ Checklist:
     <img src="nibbles.png" width="70%"
     alt="Nibbles machine pwnd" >
 </figure>
-
-
-

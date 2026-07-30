@@ -22,4 +22,3 @@ image:
 3. Visiting the listed directory:
 
     ![](flag.png)
-

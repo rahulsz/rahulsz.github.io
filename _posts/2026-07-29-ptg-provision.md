@@ -55,16 +55,10 @@ ssh -i /tmp/rootkey root@<TARGET_IP>
 cat /root/root.txt
 ```
 
+![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_9.png)
+
 ## Flags
 | Type | Flag | Path |
 |---|---|---|
 | user | 2ad29a9eb5e84f0648dff6ed6727a026 | `/home/www-data/user.txt` |
 | root | d4611a01ea853929bef77227a808d888 | `/root/root.txt` |
-
-
-## Complete PTG Lab Screenshots
-
-<details>
-<summary>Click to view all screenshots for the PTG Lab VMs</summary>
-
-</details>

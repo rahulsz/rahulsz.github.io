@@ -54,16 +54,10 @@ nc -lvnp 5555
 cat /root/root.txt
 ```
 
+![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_11.png)
+
 ## Flags
 | Type | Flag | Path |
 |---|---|---|
 | user | b590d10336bf79de85acb787ac8a5546 | `/home/vagrant/user.txt` |
 | root | 3d876b826027b0200ccb6634e16dfbfa | `/root/root.txt` |
-
-
-## Complete PTG Lab Screenshots
-
-<details>
-<summary>Click to view all screenshots for the PTG Lab VMs</summary>
-
-</details>

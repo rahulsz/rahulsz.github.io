@@ -38,4 +38,3 @@ image:
 5. Then we will login with `carlos` account and his new password:
 
     ![](lab1_solved.png)
-

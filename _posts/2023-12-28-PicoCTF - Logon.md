@@ -38,6 +38,3 @@ image:
     ![](flag.png)
 
     ![](flag_browser.png){: width="80%" .normal}
-
-
-

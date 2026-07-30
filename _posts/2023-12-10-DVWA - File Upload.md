@@ -472,4 +472,3 @@ generateSessionToken();
 
 ?> 
 ```
-

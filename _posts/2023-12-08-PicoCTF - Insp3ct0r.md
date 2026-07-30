@@ -26,4 +26,3 @@ The comment mentions that the flag is split in three parts, and since the creato
 ![](css_2_3.png)
 
 ![](js_3_3.png)
-

@@ -18,6 +18,8 @@ The scan revealed multiple open ports:
 
 The presence of RPCBind (111) and NFS (2049) indicates that the target is running an NFS service, which could allow remote file sharing.
 
+![Walkthrough Step](/assets/ptgarage_pages/no_files_shared/page_1.png)
+
 ## 2. NFS Share Enumeration
 To identify accessible NFS shares, the following command was used:
 
@@ -29,6 +31,8 @@ showmount -e 13.206.97.201
 
 This shows that the `/var/share` directory is exported and accessible to **all hosts (*)**, which is a misconfiguration and a potential security risk.
 
+![Walkthrough Step](/assets/ptgarage_pages/no_files_shared/page_2.png)
+
 ## 3. Mounting the NFS Share
 Since the share is publicly accessible, it was mounted locally:
 
@@ -38,11 +42,15 @@ ls /mnt
 # package.tar.gz
 ```
 
+![Walkthrough Step](/assets/ptgarage_pages/no_files_shared/page_3.png)
+
 ## 4. Analyzing the Retrieved Archive
 After mounting the NFS share, the file `package.tar.gz` was downloaded and extracted. The archive contained the `/root/.ssh/` directory which included the root user's SSH keys:
 - `authorized_keys`
 - `id_ecdsa` (Private Key)
 - `id_ecdsa.pub` (Public Key)
+
+![Walkthrough Step](/assets/ptgarage_pages/no_files_shared/page_4.png)
 
 ## 5. Gaining SSH Access
 First, proper permissions were set on the private key:
@@ -65,18 +73,3 @@ cat /root/flag.txt
 ```
 
 ---
-
-
-
-## Walkthrough Screenshots
-
-![Screenshot](/assets/ptgarage/no_files_shared/img_1_1.png)
-
-![Screenshot](/assets/ptgarage/no_files_shared/img_1_2.png)
-
-![Screenshot](/assets/ptgarage/no_files_shared/img_2_1.png)
-
-![Screenshot](/assets/ptgarage/no_files_shared/img_3_1.png)
-
-![Screenshot](/assets/ptgarage/no_files_shared/img_4_1.png)
-

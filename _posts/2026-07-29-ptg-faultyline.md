@@ -49,16 +49,10 @@ sudo find . -exec /bin/sh \; -quit
 cat /root/root.txt
 ```
 
+![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_4.png)
+
 ## Flags
 | Type | Flag | Path |
 |---|---|---|
 | user | 38a3797439e967b4fa53e6029b99b280 | `/var/www/user.txt` |
 | root | ded83b5bc749e3c9b6c77de19cb9afd0 | `/root/root.txt` |
-
-
-## Complete PTG Lab Screenshots
-
-<details>
-<summary>Click to view all screenshots for the PTG Lab VMs</summary>
-
-</details>

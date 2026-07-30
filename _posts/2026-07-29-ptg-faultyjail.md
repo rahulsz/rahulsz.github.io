@@ -14,16 +14,10 @@ The `build.sh` for this box (FaultyJail / CVE-2025-4123.zip) hasn't been uploade
 ## What to do
 Send over the `build.sh` (or the CVE-2025-4123.zip) and I'll fill in the full walkthrough with the exact commands and paths, matching the format of the other labs.
 
+![Walkthrough Screenshot](/assets/ptgarage_pages/ptg_lab_walkthroughs/page_5.png)
+
 ## Flags
 | Type | Flag | Path |
 |---|---|---|
 | user | 4279281b0fa8432ac66a8c16d805dbc2 | `/home/[user]/user.txt` |
 | root | dbc048e58e3db036957336b763e811ac | `/root/root.txt` |
-
-
-## Complete PTG Lab Screenshots
-
-<details>
-<summary>Click to view all screenshots for the PTG Lab VMs</summary>
-
-</details>

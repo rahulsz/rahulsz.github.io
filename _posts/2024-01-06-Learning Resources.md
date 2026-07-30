@@ -78,4 +78,4 @@ featured: true
 - [Hacking The Cloud](https://hackingthe.cloud/)
 - [AWS Certified Security - Specialty](https://aws.amazon.com/certification/certified-security-specialty/)
 - [Postman Classroom Program](https://www.postman.com/postman/workspace/postman-classroom-program/overview)
-- [Pwnedlabs](https://pwnedlabs.io/dashboard) 
+- [Pwnedlabs](https://pwnedlabs.io/dashboard)
