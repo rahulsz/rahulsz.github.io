@@ -29,6 +29,8 @@ Now we can enumerate the server. We will look for binaries with the Set-Group-ID
 find / -group ctf 2>/dev/null
 ```
 
+![Find Command Output](/assets/ptgarage/ptg_superid/img_2_1.png)
+
 **Output:**
 ```text
 /home/ctf
@@ -68,6 +70,8 @@ cat: flag: Permission denied
 # Exploiting the SGID binary
 sed '' /home/ctf/flag
 ```
+
+![Flag Output](/assets/ptgarage/ptg_superid/img_3_1.png)
 
 This successfully prints the flag:
 ```text

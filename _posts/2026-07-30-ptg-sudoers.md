@@ -29,6 +29,8 @@ Once we are in as `user`, we can check our sudo privileges by running `sudo -l`:
 sudo -l
 ```
 
+![Terminal Output](/assets/ptgarage/ptg_sudoers/img_2_1.png)
+
 **Output:**
 ```text
 Matching Defaults entries for user on 20sudoers...:
@@ -48,10 +50,14 @@ We can abuse this configuration to read the flag file, which is only readable by
 # Attempting to read it directly fails
 cat flag
 cat: flag: Permission denied
+```
 
+```bash
 # Exploiting sudo permissions to read it as the 'ctf' user
 sudo -u ctf less flag
 ```
+
+![Flag Screenshot](/assets/ptgarage/ptg_sudoers/img_3_1.png)
 
 The `less` pager opens and displays the flag:
 

