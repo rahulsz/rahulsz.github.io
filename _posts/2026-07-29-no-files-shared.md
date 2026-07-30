@@ -2,7 +2,7 @@
 title: NFS Privilege Escalation - CTF Writeup (no-files-shared)
 date: 2026-07-29 12:30:00 +0000
 categories: [Walkthroughs, Linux Escalation]
-tags: [linux, privilege-escalation, nfs, ssh]
+tags: [linux, privilege-escalation, nfs, ssh, Linux Escalation, pt-garage]
 ---
 
 # NFS Privilege Escalation — CTF Writeup

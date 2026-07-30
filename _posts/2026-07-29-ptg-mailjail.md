@@ -2,7 +2,7 @@
 title: MailJail
 date: 2026-07-29 12:45:00 +0000
 categories: [Walkthroughs, WebSecurity]
-tags: [pt-garage, roundcube, ftp, keepass, ld_preload, privesc, web-exploitation]
+tags: [pt-garage, roundcube, ftp, keepass, ld_preload, privesc, web-exploitation, WebSecurity]
 ---
 
 # MailJail

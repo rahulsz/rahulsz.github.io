@@ -2,7 +2,7 @@
 title: Provision
 date: 2026-07-29 12:25:00 +0000
 categories: [Walkthroughs, WebSecurity]
-tags: [pt-garage, flask, command-injection, cron, privesc, web-exploitation]
+tags: [pt-garage, flask, command-injection, cron, privesc, web-exploitation, WebSecurity]
 ---
 
 # Provision
