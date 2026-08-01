@@ -3,9 +3,10 @@ title: Privilege Escalation Lab1 - Linux Git Pager Abuse
 date: 2026-07-30 12:00:00 +0000
 categories: [Walkthroughs, Linux Escalation]
 tags: [linux-privesc, sudo-abuse, git, Linux Escalation, pt-garage]
----
 
-![Intro Banner](/assets/img/custom_banners/2026-07-30-privilege-escalation-lab1_banner.png)
+image:
+    path: /assets/img/custom_banners/2026-07-30-privilege-escalation-lab1_banner.png
+---
 
 - **Box:** Privilege Escalation Lab1
 - **Vulnerability:** Sudo Abuse via Git `core.pager` misconfiguration
