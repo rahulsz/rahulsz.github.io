@@ -3,6 +3,9 @@ title: GraSSHopper
 date: 2026-07-29 12:15:00 +0000
 categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, ssh, credential-leak, privesc, web-exploitation, WebSecurity]
+
+image:
+    path: /assets/img/custom_banners/2026-07-29-ptg-grasshopper_banner.png
 ---
 
 ![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-grasshopper_banner.png)

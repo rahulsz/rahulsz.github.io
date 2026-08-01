@@ -3,6 +3,9 @@ title: Provision
 date: 2026-07-29 12:25:00 +0000
 categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, flask, command-injection, cron, privesc, web-exploitation, WebSecurity]
+
+image:
+    path: /assets/img/custom_banners/2026-07-29-ptg-provision_banner.png
 ---
 
 ![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-provision_banner.png)

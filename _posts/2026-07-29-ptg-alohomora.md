@@ -3,6 +3,9 @@ title: Alohomora (CVE-2021-43857)
 date: 2026-07-29 12:00:00 +0000
 categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, gerapy, rce, django, ftp, web-exploitation, WebSecurity]
+
+image:
+    path: /assets/img/custom_banners/2026-07-29-ptg-alohomora_banner.png
 ---
 
 ![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-alohomora_banner.png)

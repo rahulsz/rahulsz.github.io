@@ -3,6 +3,9 @@ title: PTG Sudoers - Linux Privilege Escalation
 date: 2026-07-30 12:00:00 +0000
 categories: [Walkthroughs, Linux Escalation]
 tags: [linux-privesc, sudo-abuse, Linux Escalation, pt-garage]
+
+image:
+    path: /assets/img/custom_banners/2026-07-30-ptg-sudoers_banner.png
 ---
 
 ![Intro Banner](/assets/img/custom_banners/2026-07-30-ptg-sudoers_banner.png)

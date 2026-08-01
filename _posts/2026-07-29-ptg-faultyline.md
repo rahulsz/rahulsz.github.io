@@ -3,6 +3,9 @@ title: FaultyLine (CVE-2021-41773)
 date: 2026-07-29 12:05:00 +0000
 categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, apache, path-traversal, rce, gtfobins, web-exploitation, WebSecurity]
+
+image:
+    path: /assets/img/custom_banners/2026-07-29-ptg-faultyline_banner.png
 ---
 
 ![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-faultyline_banner.png)

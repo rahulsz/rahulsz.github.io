@@ -3,6 +3,9 @@ title: FaultyJail (CVE-2025-4123)
 date: 2026-07-29 12:10:00 +0000
 categories: [Walkthroughs, WebSecurity]
 tags: [pt-garage, cve-2025-4123, web-exploitation, WebSecurity]
+
+image:
+    path: /assets/img/custom_banners/2026-07-29-ptg-faultyjail_banner.png
 ---
 
 ![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-faultyjail_banner.png)
