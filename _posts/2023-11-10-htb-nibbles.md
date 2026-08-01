@@ -22,8 +22,11 @@ What we know beforehand:
 3. The room focus on **web app testing**.
 
 Checklist:
+
 - [x] 1 Port scanning
 - [x] 2 Banner Grabbing
+
+<!-- -->
 
 ### Port scanning
 
@@ -46,9 +49,11 @@ Checklist:
 ## 2. Web enumeration
 
 Checklist:
+
 - [x] 1 Check tools used
   + [x] 1.1 Wappalyzer
   + [x] 1.2 `whatweb`
+
 - [x] 2 View page source
   + [x] 2.1 Enumerate `/nibbleblog` dir & search public exploits
     + [x] 2.1.1 [CVE-2015-6967](https://nvd.nist.gov/vuln/detail/CVE-2015-6967)
@@ -57,9 +62,13 @@ Checklist:
     + [ ] 2.1.2 Metasploit module tested on 4.0.3
     > works on 4.0.3 & needs valid creds --> `image.php` cleanup error
     {: .prompt-warning }
+
 - [x] 3 Dir-busting
   + [x] 3.1 Enumerate subdirectories 
+
 - [x] 4 Upload a [PHP reverse shell](https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php) directly on `My Image` plugin. 
+
+<!-- -->
 
 ### Checking technologies
 
@@ -156,9 +165,12 @@ Checklist:
 ## 3. Initial Foothold
 
 Checklist:
+
 - [x] 1 Stabilize shell
 - [x] 2 Search for `user.txt`
 - [x] 3 Check current user's privileges
+
+<!-- -->
 
 ### Stabilizing shell & searching for `user.txt`
 
@@ -179,8 +191,11 @@ Checklist:
 ## 4. Privilege Escalation
 
 Checklist:
+
 - [x] 1 Try to exploit `monitor.sh`
 - [x] 2 Search for `root.txt`
+
+<!-- -->
 
 ### Exploiting `monitor.sh` 
 

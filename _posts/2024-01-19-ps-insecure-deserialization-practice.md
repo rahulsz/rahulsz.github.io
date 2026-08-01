@@ -39,12 +39,15 @@ O:4:"User":2:{s:4:"name":s:6:"carlos"; s:10:"isLoggedIn":b:1;}
 ```
 
 This can be interpreted as follows:
+
 - `O:4:"User"` - An object with the 4-character class name "User".
 - `2` - the object has 2 attributes.
 - `s:4:"name"` - The key of the first attribute is the 4-character string "name".
 - `s:6:"carlos"` - The value of the first attribute is the 6-character string "carlos".
 - `s:10:"isLoggedIn"` - The key of the second attribute is the 10-character string "isLoggedIn".
 - `b:1` - The value of the second attribute is the boolean value true.
+
+<!-- -->
 
 The native methods for PHP serialization are `serialize()` and `unserialize()`. 
 
@@ -167,7 +170,6 @@ PHP-based logic is vulnerable to data type manipulation due to the behavior of i
 This is known as [**Type Juggling**](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Type%20Juggling/README.md#type-juggling): 
 
 > _PHP is a loosely typed language, which means it tries to predict the programmer's intent and automatically converts variables to different types whenever it seems necessary. For example, a string containing only numbers can be treated as an integer or a float. However, this automatic conversion (or **type juggling**) can lead to unexpected results, especially when comparing variables using the `==` operator, which only checks for value equality (**loose comparison**), and not the `===` operator, which checks for both type and value equality (**strict comparison**)._
-
 
 Unusually, **this also works for any alphanumeric string that starts with a number**. In this case, PHP will effectively convert the entire string to an integer value based on the initial number and the rest of it will be completely ignored. For example, `5 == "5 test"` will be treated as `5 == 5`!
 
@@ -295,7 +297,6 @@ If an attacker has source code access, they can study all the available classes 
 ### Gadget chains
 
 Classes containing these deserialization magic methods can also be used to initiate more complex attacks involving a **long series of method invocations**, known as a "**gadget chain**".
-
 
 ## Related resources
 

@@ -18,6 +18,8 @@ image:
 - **Horizotal PrivEsc via Decryption & Hash Cracking** with _GPG_, _john_
 - **Vertical PrivEsc via SUDO** with _GTFOBins_
 
+<!-- -->
+
 ## 2 Background Information
 
 [Tomghost's CTF room](https://tryhackme.com/room/tomghost)'s goal is to "_identify recent vulnerabilities to try exploit the system or read files that you should not have access to_". Let's first start with gaining an understanding what we are actually trying to do on this room.

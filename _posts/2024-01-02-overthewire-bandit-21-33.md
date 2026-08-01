@@ -57,7 +57,10 @@ cronjob_bandit17_root  cronjob_bandit23  cronjob_bandit25_root  otw-tmp-dir
 # display the file content
 bandit21@bandit:/etc/cron.d$ cat cronjob_bandit22
 @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+
 * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+
+<!-- -->
 
 # display the file content
 bandit21@bandit:/etc/cron.d$ cat /usr/bin/cronjob_bandit22.sh
@@ -100,7 +103,10 @@ total 36
 
 bandit22@bandit:~$ cat /etc/cron.d/cronjob_bandit23
 @reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+
 * * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+
+<!-- -->
 
 bandit22@bandit:~$ cat /usr/bin/cronjob_bandit23.sh
 #!/bin/bash
@@ -151,7 +157,10 @@ $ ssh bandit23@bandit.labs.overthewire.org -p 2220
 
 bandit23@bandit:~$ cat /etc/cron.d/cronjob_bandit24
 @reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+
 * * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+
+<!-- -->
 
 bandit23@bandit:~$ cat /usr/bin/cronjob_bandit24.sh
 #!/bin/bash
@@ -467,7 +476,6 @@ Failed to add the host to the list of known hosts (/home/bandit27/.ssh/known_hos
                         | |_) | (_| | | | | (_| | | |_
                         |_.__/ \__,_|_| |_|\__,_|_|\__|
 
-
                       This is an OverTheWire game server.
             More information on http://www.overthewire.org/wargames
 
@@ -510,7 +518,6 @@ Failed to add the host to the list of known hosts (/home/bandit28/.ssh/known_hos
                         | '_ \ / _` | '_ \ / _` | | __|
                         | |_) | (_| | | | | (_| | | |_
                         |_.__/ \__,_|_| |_|\__,_|_|\__|
-
 
                       This is an OverTheWire game server.
             More information on http://www.overthewire.org/wargames
@@ -609,7 +616,6 @@ Failed to add the host to the list of known hosts (/home/bandit29/.ssh/known_hos
                         | |_) | (_| | | | | (_| | | |_
                         |_.__/ \__,_|_| |_|\__,_|_|\__|
 
-
                       This is an OverTheWire game server.
             More information on http://www.overthewire.org/wargames
 
@@ -654,6 +660,7 @@ After checking both logs, it does not seem that they include anything of interes
 ```bash
 # list branches
 bandit29@bandit:/tmp/lvl_29/repo$ git branch -a
+
 * master
   remotes/origin/HEAD -> origin/master
   remotes/origin/dev
@@ -711,7 +718,6 @@ Failed to add the host to the list of known hosts (/home/bandit29/.ssh/known_hos
                         | |_) | (_| | | | | (_| | | |_
                         |_.__/ \__,_|_| |_|\__,_|_|\__|
 
-
                       This is an OverTheWire game server.
             More information on http://www.overthewire.org/wargames
 
@@ -763,7 +769,6 @@ Failed to add the host to the list of known hosts (/home/bandit31/.ssh/known_hos
                         | '_ \ / _` | '_ \ / _` | | __|
                         | |_) | (_| | | | | (_| | | |_
                         |_.__/ \__,_|_| |_|\__,_|_|\__|
-
 
                       This is an OverTheWire game server.
             More information on http://www.overthewire.org/wargames

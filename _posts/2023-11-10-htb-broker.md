@@ -19,10 +19,13 @@ image:
 ## Initial Enumeration
 
 What we know:
+
 - Target IP: 10.10.11.243
 - tun0: 10.10.14.11
 - OS: Linux
 - Web server focused
+
+<!-- -->
 
 1. Let's add the target IP to `/etc/hosts` so we can refer to it as `broker`:
 
@@ -90,15 +93,17 @@ What we know:
     ```
 
     Nmap gave us the following info back:
+
     - As expected port `80` is listening but we get `Error 401 Unauthorized` back.
     - We see many ports related to `Jetty 9.4.39.v20210325` and `ActiveMQ`, not sure what both of these are yet.
+
+<!-- -->
 
 3. Let's visit the server via browser to see what it looks like:
 
     ![](homepage.png){: .normal width="60%"}
 
     Upon visiting the server, we are asked for credentials which is the reason we got the `Error 401 Unauthorized` message back from Nmap. Since, we are not sure what exactly **ActiveMQ** and **Jetty** is, let's find out.
-
 
     > [**Active Message Queuing (ActiveMQ)**](https://www.extrahop.com/resources/protocols/activemq/) is an open source protocol written in Java and developed by Apache which functions as an implementation of message-oriented middleware (MOM). Its basic function is to send messages between different applications, but includes additional features like STOMP, JMS, and OpenWire. It supports enterprise features and a high number of transport protocols. ActiveMQ translates messages from sender to receiver. It can connect multiple clients and servers and allows messages to be held in queue, instead of requiring both the client and server to be available simultaneously in order to communicate. Messaging can still happen even if one application is temporarily indisposed.
 
@@ -150,10 +155,13 @@ What we know:
     Apparently there is a known RCE vulnerability with the [CVE-2023-46604](https://nvd.nist.gov/vuln/detail/CVE-2023-46604). The [second search result](https://github.com/SaumyajeetDas/CVE-2023-46604-RCE-Reverse-Shell-Apache-ActiveMQ) seems interesting and it also mentions Metasploit. After searching for "*activemq 5.15.5 exploit metasploit*", we find [this](https://www.rapid7.com/blog/post/2023/11/01/etr-suspected-exploitation-of-apache-activemq-cve-2023-46604/) page which includes a list with the **Affected Products** and our target version is in:
 
     _According to Apache’s advisory, CVE-2023-46604 affects the following:_
+
     - Apache ActiveMQ 5.18.0 before 5.18.3
     - Apache ActiveMQ 5.17.0 before 5.17.6
     - Apache ActiveMQ 5.16.0 before 5.16.7
     - **Apache ActiveMQ before 5.15.16**
+
+<!-- -->
 
 7. Let's clone the PoC we found and see how it works:
 
@@ -314,9 +322,12 @@ What we know:
     ```
 
     The key parts are the following:
+
     - `user root;` The worker processes will be run by `root`, meaning when we eventually upload a file, it will also be owned by `root`.
     - `root /;` The document root will be the topmost directory of the filesystem.
     - `dave_methods PUT;` We enable the `WebDav` HTTP extension with the `PUT` method, which allows clients to upload files.
+
+<!-- -->
 
     We can now configure `nginx` to use it as follows:
 

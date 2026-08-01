@@ -31,11 +31,14 @@ PORT   STATE SERVICE VERSION
 ```
 
 Info from Nmap:
+
 - SSH server but we need creds for that.
 	- `OpenSSH 8.2p1` --> nothing interesting
 	- Run `ssh_audit.py` --> not much
 - HTTP server open
 	- version `Apache 2.4.41` --> not much
+
+<!-- -->
 
 ## HTTP enum
 
@@ -45,10 +48,12 @@ Homepage:
 
 Things to note down:
 1. Staff names:
+
 	- Lilian Klein, *Head of Topology Group*
 	- **Vajramani Daisley, *Software Developer*** --> Interesting
 	- **Derek Abrahams, *Sysadmin*** --> Interesting
 2. **LaTeX Equation Generator** project:
+
 	- Link redirects to `http://latex.topology.htb/equation.php`. --> Add domain to local DNS file
 3. Site powered by **w3.css**. --> not much
 
@@ -399,8 +404,11 @@ _A **subdomain** is a **part of a larger domain**. It is a way to organize and s
 _A **vhost**, is a **configuration method used by web servers** (like Apache or Nginx) to host **multiple domain names on a single server**. With virtual hosting, a single physical server can serve content for multiple domains, and **each domain is treated as if it has its own server instance**. Vhosts are defined in the web server's configuration files, and they allow different websites to coexist on the same server, each with its own settings, files, and configurations._
 
 In summary:
+
 - A subdomain is a way to structure the content within a domain.
 - A vhost is a configuration setting that allows a single server to host multiple domains. 
+
+<!-- -->
 
 > _You can have subdomains within a vhost, meaning that a server configured with virtual hosts can serve content for multiple domains and their respective subdomains._
 

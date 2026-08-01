@@ -22,14 +22,20 @@ Once we have identified API endpoints, we can use Burp Repeater and Intruder to 
 ## Identifying supported HTTP methods
 
 The HTTP method specifies the action to be performed on a resource:
+
 - `GET` - Retrieves data from a resource.
 - `PATCH` - Applies partial changes to a resource.
 - `OPTIONS` - Retrieves info on the types of request methods that can be used on a resource.
 
+<!-- -->
+
 It's important to test all potential methods as it may enable us to identify additional endpoint functionality, opening up more attack surface. For instance, the endpoint `/api/tasks` may support the following methods:
+
 - `GET /api/tasks` - Retrieves a list of tasks.
 - `POST /api/tasks` - Creates a new task.
 - `DELETE /api/tasks/1` - Deletes a task.
+
+<!-- -->
 
 We can use the built-in HTTP verbs in Burp Intruder to automatically cycle through a range of methods.
 
@@ -38,9 +44,12 @@ We can use the built-in HTTP verbs in Burp Intruder to automatically cycle throu
 ## Identifying supported content types
 
 API endpoints often expect data in a specific format. They may therefore behave differently depending on the content type of the data provided in a request. Changing the content type may enable us to:
+
 - Trigger errors that disclose useful info.
 - Bypass flawed defences.
 - Take advantage of differences in processing logic. For example, an API may be secure when handling JSON data but susceptible to injection attacks when dealing with XML.
+
+<!-- -->
 
 To change the content type, we can modify the `Content-Type` header and then reformat the request body accordingly. We can use the **Content type converter** BApp to automatically convert data submitted within requests between XML and JSON.
 
@@ -85,9 +94,12 @@ When fuzzing, we can use wordlists based on common API naming conventions and in
 ## Finding hidden parameters
 
 When we are doing API recon, we may find undocumented parameters that the API supports. We can attempt to use these to change the app's behaviour. Burp includes numerous tools that can help us identify hidden parameters:
+
 - **Burp Intruder** enables us to fuzz for hidden parameters, using a wordlist of common parameter names to replace existing ones or add new parameters.
 - The **Param miner** BApp enables us to automatically guess up to 65,536 parameter names per request. It guesses names that are relevant to the app, based on info taken from the scope.
 - The **Content discovery tool** enables us to discover content that isn't linked from visible content that we can browse to, including parameters.
+
+<!-- -->
 
 ## Resources
 

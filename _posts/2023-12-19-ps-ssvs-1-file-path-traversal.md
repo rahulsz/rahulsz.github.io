@@ -13,7 +13,6 @@ image:
 
 A path, aka directory or dot-dot-slash, vulneratibility enables the attacker to access (read or write) arbitrary files on the application server.
 
-
 1. Let's say that a shopping app displays images loading this HTML code:
 
     ```html

@@ -105,7 +105,6 @@ image:
 
     ![](flag.png)
 
-
 ## Resources
 
 - [Insecure deserialization - Theory](https://cspanias.github.io/posts/PS-Insecure-deserialization-Theory/)

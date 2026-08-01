@@ -10,8 +10,11 @@ image:
 ---
 
 > **Objective**: _This lab's password reset functionality is vulnerable. To solve the lab, reset Carlos's password then log in and access his "My account" page._
+
 - _Your credentials: `wiener:peter`._
 - _Victim's username: `carlos`._
+
+<!-- -->
 
 1. The site has a *Forgot password?* functionality, so let's use that for the account `wiener` to see how it works:
 

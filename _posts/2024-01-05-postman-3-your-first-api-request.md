@@ -43,7 +43,6 @@ To start making Postman requests, you need to be inside a workspace:
 
     ![](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F26fp2261340y1ukokimvca8su%2Fpublic%2F1649279747%2Fpostman-library-api-v2-collection-name.1649279747514.png){: .normal}
 
-
 Next up, we will make our first API request.
 
 ## Task: Get books from the Library API

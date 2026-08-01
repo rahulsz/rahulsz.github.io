@@ -100,12 +100,15 @@ If the `isAdmin` value in the request is bound to the user object without adequa
 ## Preventing vulnerabilities in APIs
 
 When designing APIs, we must make sure that security is a consideration from the beginning:
+
 - Secure your documentation if we don't intend our API to be publicly accessible.
 - Ensure our documentation is kept up to date so the legitimate testers have full visibility of the API's attack surface.
 - Apply an allowlist of permitted HTTP methods.
 - Validate that the content type is expected for each request or response.
 - Use generic error messages to avoid giving away info that may be useful for an attacker.
 - Use protective measures on all API version, not just the current production one.
+
+<!-- -->
 
 To prevent auto-binding vulnerabilities, we can allowlist the properties that can be updated by the user, and blocklist sensitive properties that should not be updated by the user.
 

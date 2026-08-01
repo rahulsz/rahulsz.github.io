@@ -14,6 +14,8 @@ image:
 - [How to install dvwa on Kali](https://www.kali.org/tools/dvwa/).
 - [Official GitHub repository](https://github.com/digininja/DVWA).
 
+<!-- -->
+
 > The DVWA server itself contains instructions about almost everything.
 
 _**Damn Vulnerable Web Application (DVWA)** is a PHP/MySQL web application that is damn vulnerable. Its main goal is to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and to aid both students & teachers to learn about web application security in a controlled class room environment._
@@ -30,6 +32,8 @@ The DVWA server has **4 different security levels** which can be set as seen bel
 - **Medium**: This setting is mainly to give an example to the user of bad security practices, where the developer has tried but failed to secure an application. It also acts as a challenge to users to refine their exploitation techniques.
 - **High**: This option is an extension to the medium difficulty, with a mixture of harder or alternative bad practices to attempt to secure the code. The vulnerability may not allow the same extent of the exploitation, similar in various Capture The Flags (CTFs) competitions.
 - **Impossible**: This level should be secure against all vulnerabilities. It is used to compare the vulnerable source code to the secure source code.
+
+<!-- -->
 
 ## SQL Injection
 
@@ -132,7 +136,6 @@ Before start working on this lab, we must ensure that the `display_errors` PHP c
     ORDER BY 1
     ```
 
-
 4. We got the error on `3`, so this confirms that there are only 2 columns in that table. We can try guessing those fields, for instance, inputting `' UNION SELECT username, password FROM users#`:
 
     ![](username_error.png)
@@ -223,7 +226,6 @@ Before start working on this lab, we must ensure that the `display_errors` PHP c
     ```
 
     > Notice that the first and last hash are the same, that is why we have 4 passwords as our output.
-
 
 ## Security: Medium
 > _The medium level uses a form of SQL injection protection, with the function of [`mysql_real_escape_string()`](https://www.php.net/manual/en/function.mysql-real-escape-string.php). However due to the SQL query not having quotes around the parameter, this will not fully protect the query from being altered. The text box has been replaced with a pre-defined dropdown list and uses POST to submit the form ([Source code](https://github.com/CSpanias/cspanias.github.io/blob/main/assets/dvwa/sqli/sqli_medium_source_code.php))._

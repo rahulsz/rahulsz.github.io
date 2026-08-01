@@ -44,6 +44,7 @@ http://cozyhosting.htb [200 OK] Bootstrap, Content-Language[en-US], Country[RESE
 
 ```page-source
     <!-- =======================================================
+
     * Template Name: FlexStart
     * Updated: Mar 10 2023 with Bootstrap v5.2.3
     * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
@@ -54,6 +55,7 @@ http://cozyhosting.htb [200 OK] Bootstrap, Content-Language[en-US], Country[RESE
 
 ```page-source-login
    <!-- =======================================================
+
     * Template Name: NiceAdmin
     * Updated: Mar 09 2023 with Bootstrap v5.2.3
     * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -530,7 +532,6 @@ uid=0(root) gid=0(root) groups=0(root)
     
     **For Spring 1x, they are registered under the root URL, and in 2x they moved to the "/actuator/" base path.**
 
-
 3. URL key chars encoding:
 
     ```shell
@@ -549,9 +550,13 @@ uid=0(root) gid=0(root) groups=0(root)
     - [Bash IFS - What is the Internal Field Separator?](https://delightlylinux.wordpress.com/2020/02/16/bash-ifs-what-is-the-internal-field-separator/)
     - [Linux Shell - What is IFS?](https://www.theunixschool.com/2020/05/linux-shell-what-is-ifs.html)
 
+<!-- -->
+
 5. JAR file manipulation
 
     - [How to Open a JAR File Using the Command Line](https://www.makeuseof.com/jar-file-open-using-command-line/)
+
+<!-- -->
 
 <figure>
     <img src="cozy_pwned.png"

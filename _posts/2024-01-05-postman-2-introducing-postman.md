@@ -62,18 +62,24 @@ $ curl https://api.github.com/users/postmanlabs
 It works great, but once you make the call, the API response data is lost in the river of the terminal. You also don't have visibility of the metadata of the response without adding more details to the command.
 
 Here is the same call done with **Postman**: 
+
 - It shows the response with clan indents and colors
 - It allows you to save, organize and share your requests
 - You can see the components of the request and response broken down into tabs and other helpful details.
+
+<!-- -->
 
 ![](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F26fp2261340y1ukokimvca8su%2Fpublic%2F1651760511%2Fedit-apiresponse.1651760511674.png)
 
 ## The API First World
 
 Postman has a **vision for an API-First World** - one where 100 million developers are connected through APIs, and APIs take center stage as primary building blocks. In the API-first world:
+
 - APIs are considered a #1 priority.
 - APIs are easily consumable.
 - APIs are easily discoverable.
+
+<!-- -->
 
 > [The API-FIRST WORLD](https://api-first-world.com/) novel.
 

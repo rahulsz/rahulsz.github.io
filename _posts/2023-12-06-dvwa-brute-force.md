@@ -14,6 +14,8 @@ image:
 - [How to install dvwa on Kali](https://www.kali.org/tools/dvwa/).
 - [Official GitHub repository](https://github.com/digininja/DVWA).
 
+<!-- -->
+
 > The DVWA server itself contains instructions about almost everything.
 
 _**Damn Vulnerable Web Application (DVWA)** is a PHP/MySQL web application that is damn vulnerable. Its main goal is to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and to aid both students & teachers to learn about web application security in a controlled class room environment._
@@ -30,6 +32,8 @@ The DVWA server has **4 different security levels** which can be set as seen bel
 - **Medium**: This setting is mainly to give an example to the user of bad security practices, where the developer has tried but failed to secure an application. It also acts as a challenge to users to refine their exploitation techniques.
 - **High**: This option is an extension to the medium difficulty, with a mixture of harder or alternative bad practices to attempt to secure the code. The vulnerability may not allow the same extent of the exploitation, similar in various Capture The Flags (CTFs) competitions.
 - **Impossible**: This level should be secure against all vulnerabilities. It is used to compare the vulnerable source code to the secure source code.
+
+<!-- -->
 
 ## Brute-force
 
@@ -52,16 +56,18 @@ A last resort is to try every possible password, known as a **brute force attack
 	![](low_burp_proxy.png)
 
 	Things to note down:
+
 	- `GET` request
 	- Parameters: `username`, `password`, `Login`
 	- `Cookie: PHPSESSID=ud36qu65oddvmncfg54n515nhn; security=low`
+
+<!-- -->
 
 2. Check for error messages when attempting a random login (via Burp Suite or browser):
 
 	![](error_message.jpg)
 
 	![](error_message.png)
-
 
 3. Create a small username and password lists for efficiency:
 
@@ -163,7 +169,6 @@ hydra -L usernames.txt -P passwords.txt 127.0.0.1 -s 42001 http-get-form "/vulne
 	4. Modify bs4 import: `from BeautifulSoup import BeautifulSoup as Soup` to `from bs4 import BeautifulSoup as Soup`.
 
 	> Documentation: [bs4](https://pypi.org/project/beautifulsoup4/), [2to3](https://docs.python.org/3/library/2to3.html).  
-
 
 	```python
 	# modified code

@@ -44,9 +44,12 @@ Service Info: Hosts: nagios.monitored.htb, 127.0.0.1; OS: Linux; CPE: cpe:/o:lin
 ```
 
 Nmap info:
+
 - SSH open, but we need creds.
 - HTTP redirects to HTTPS -> add to `/etc/hosts`
 - Find more about LDAP `389`
+
+<!-- -->
 
 ## Initial foothold
 
@@ -271,8 +274,11 @@ A lot of directories have been found, including `/admin`, `/api` and `/terminal`
 | `/admin`, `/reports`, `/account`, `/db`, `/views`, `/sounds` | None                                            |
 
 From those, we can further explore:
+
 - `/terminal` because it is a terminal after all!
 - `/api` because it represents the intended way for developers and other apps to communicate with the application.
+
+<!-- -->
 
 The `/terminal` directory requires credentials, and the ones we currently have do not work:
 
@@ -371,8 +377,11 @@ available databases [2]:
 ```
 
 We got some information back:
+
 - The DMBS used is MySQL.
 - We have two databases: `nagiosxi` and `information_schema`.
+
+<!-- -->
 
 The [vulnerability description](https://outpost24.com/blog/nagios-xi-vulnerabilities/) mentions that there is a `xi_users` table; let's see if this exists:
 

@@ -12,6 +12,8 @@ image:
 - **Vulnerability:** Sudo Abuse via Git `core.pager` misconfiguration
 - **Flag:** `ctf{esc4l4t!ng_pr!v!l3g3s}`
 
+<!-- -->
+
 ---
 
 ### 1. Initial Recon
@@ -82,5 +84,6 @@ ctf{esc4l4t!ng_pr!v!l3g3s}
 ```
 
 ### 4. Mitigation
+
 - Never grant `NOPASSWD` sudo access to large binaries like `git` that have extensive subcommands, configuration options, or pagination features.
 - If necessary to run specific git commands as another user, wrap them in a bash script and restrict sudo access exclusively to that script.

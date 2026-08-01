@@ -123,9 +123,12 @@ If an error does not occur, and the app's response contains some additional cont
 ## Using a SQLi UNION attack to retrieve interesting data
 
 When we have determined the number of columns retured from the original query and which columns can hold string data, we are ready to retrieve interesting data. Support that:
+
 - The original query returns two columns, both of which can hold strings.
 - The injection point is a quoted string within the `WHERE` clause.
 - The database contains a table called `users` with the columns `username` and `password`.
+
+<!-- -->
 
 We can retrieve the contents of `users` by:
 
@@ -194,8 +197,11 @@ This uses the double-pipe sequence, `||`, which is a string concatenation operat
 ## Examining the database in SQLi attacks
 
 To exploit SQLi vulnerabilities, it's often necessary to find info about the database, such as:
+
 - The type and version of the database software.
 - The tables and columns that the database contains.
+
+<!-- -->
 
 We can potentially identify both the database type and version by injecting provider-specific queries to see what works. The following are some queries to determine the database version for some popular database types:
 

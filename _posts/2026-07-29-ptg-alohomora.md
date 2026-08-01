@@ -16,9 +16,12 @@ nmap -Pn -sV 172.31.10.251
 ![Nmap Scan](/assets/img/walkthroughs/alohomora/alohomora_img_1.png)
 
 The scan reveals:
+
 - **Port 21:** vsftpd 3.0.5 (FTP)
 - **Port 22:** OpenSSH 8.2p1 (SSH)
 - **Port 8080:** WSGIServer 0.2 / Python 3.8.10 (HTTP)
+
+<!-- -->
 
 ## Phase 2 — Enumeration via FTP
 We can connect to the FTP service anonymously. Let's use `lftp` to connect and list the files.

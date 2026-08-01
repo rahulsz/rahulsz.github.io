@@ -22,15 +22,21 @@ This kind of attack happens when an attacker uses a system of trial and error to
 ## Username enumeration
 
 **Username enumeration** is when an attacker is able to observe changes in the website's behavior in order to identify whether a given username is valid. While attempting to brute-force a log in page, we should pay attention to any differences in:
+
 - **Status codes**: The returned HTTP status code is likely to be the same for the majority of guesses since most of them will be wrong. Responses with different status codes can indicate that the username exists. It is best practice for websites to always return the same status code regardless of the outcome, but this is not always the case.
 - **Error messages**: Sometimes the returned error message is different depending on whether both the username and the password are incorrect or only the password was incorrect.
 - **Response times**: If most of the (incorrect) requests were handled with a similar response time, any deviation could suggest that the username exist. For example, a website might only check whether the password is correct if the username is valid: this extra step might cause an increase in the response time. This might be subtle, but an attacker can make this delay more obvious by entering a excessively long password.
 
+<!-- -->
+
 ### Lab: Username enumeration via different responses
 
 > **Objective**: _This lab is vulnerable to username enumeration and password brute-force attacks. It has an account with a predictable username and password, which can be found in the following wordlists:_
+
 - [_Candidate usernames_](https://raw.githubusercontent.com/CSpanias/cspanias.github.io/main/assets/portswigger/server-side/authentication/auth_lab_usernames.txt)
 - [_Candidate passwords_](https://raw.githubusercontent.com/CSpanias/cspanias.github.io/main/assets/portswigger/server-side/authentication/auth_lab_passwords.txt)
+
+<!-- -->
 
 _To solve the lab, enumerate a valid username, brute-force this user's password, then access their account page._
 
@@ -77,8 +83,11 @@ As a result, the user is already in a "logged in" state before they have entered
 ### Lab: 2FA simple bypass
 
 > **Objective**: _This lab's 2FA can be bypassed. You have already obtained a valid username and password, but do not have access to the user's 2FA verification code. To solve the lab, access Carlos's account page._
+
 - _Your credentials: `wiener:peter`_
 - _Victim's credentials: `carlos:montoya`_
+
+<!-- -->
 
 1. We can login with `wiener`'s credentials, examine how the authentication process works, and see if we can find out where the process is vulnerable:
 

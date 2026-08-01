@@ -12,10 +12,13 @@ During the reconnaissance phase, an Nmap scan was performed against the target s
 
 ### 1. Port Scanning
 The scan revealed multiple open ports:
+
 - **22/tcp** → SSH
 - **25/tcp** → SMTP
 - **111/tcp** → RPCBind
 - **2049/tcp** → NFS (Network File System)
+
+<!-- -->
 
 The presence of RPCBind (111) and NFS (2049) indicates that the target is running an NFS service, which could allow remote file sharing.
 
@@ -47,9 +50,12 @@ ls /mnt
 
 ### 4. Analyzing the Retrieved Archive
 After mounting the NFS share, the file `package.tar.gz` was downloaded and extracted. The archive contained the `/root/.ssh/` directory which included the root user's SSH keys:
+
 - `authorized_keys`
 - `id_ecdsa` (Private Key)
 - `id_ecdsa.pub` (Public Key)
+
+<!-- -->
 
 ![Walkthrough Step](/assets/img/ptgarage_pages/no_files_shared/page_4.png)
 

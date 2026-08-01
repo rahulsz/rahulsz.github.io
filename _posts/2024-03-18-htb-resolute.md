@@ -216,9 +216,7 @@ By performing system enumeration a hidden directory was found:
 ```bash
 *Evil-WinRM* PS C:\> dir -force
 
-
     Directory: C:\
-
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
@@ -228,9 +226,7 @@ d--h--        12/3/2019   6:32 AM                PSTranscripts
 
 *Evil-WinRM* PS C:\PSTranscripts> dir -force
 
-
     Directory: C:\PSTranscripts
-
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
@@ -239,9 +235,7 @@ d--h--        12/3/2019   6:45 AM                20191203
 *Evil-WinRM* PS C:\PSTranscripts> cd 20191203
 *Evil-WinRM* PS C:\PSTranscripts\20191203> dir -force
 
-
     Directory: C:\PSTranscripts\20191203
-
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----

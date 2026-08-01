@@ -22,7 +22,6 @@ image:
 
     ![](home.png){: .normal}
 
-
 2. The name of the challenge, *Trapped Source*, suggests to view the page's source code. If we do, we can see the variable `correctPin` with its value set to `7551`:
 
     > If you get a pin with the number `0` in it, just restart the machine from HTB. I encountered this during my first attempt and waste much time trying stuff to manually input the `0` as I thought that inputting the `0` was the actual challenge! 
@@ -34,6 +33,5 @@ image:
     ![](flag.png){: .normal}
 
     ![](flag_inspector.png){: .normal}
-
 
     ![](machine_pwned.png){: width="75%" .normal}

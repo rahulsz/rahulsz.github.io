@@ -23,6 +23,8 @@ featured: true
     - [Advanced topics](https://portswigger.net/web-security/all-topics)
 - [Attacking and Defending AWS (THM)](https://tryhackme.com/path/outline/attackinganddefendingaws)
 
+<!-- -->
+
 ## 2024 Goals 🎯
 
 - [OverTheWire (Bash)](https://overthewire.org/wargames/) 🆓
@@ -42,6 +44,8 @@ featured: true
     - [CREST CPSA/CRT Preparation](https://academy.hackthebox.com/path/preview/crest-cpsacrt-preparation) 🎯
 - [Postman API Fundamentals Student Expert certification](https://academy.postman.com/postman-api-fundamentals-student-expert-certification-1) 🆓✅
 
+<!-- -->
+
 ## Recommended Platforms 👍
 
 - [APISEC University](https://www.apisecuniversity.com/#courses) 🆓
@@ -53,6 +57,7 @@ featured: true
 - [Try Hack Me](https://tryhackme.com/)
 - [CISCO](https://skillsforall.com/catalog?subject=Cybersecurity) 🆓
 
+<!-- -->
 
 ## OU Studies Tracker 📋
 
@@ -71,6 +76,8 @@ featured: true
     - [TM112 Introduction to computing and information technology 2](https://www.open.ac.uk/courses/modules/tm112) (2021) ✅
     - [TM111 Introduction to computing and information technology 1](https://www.open.ac.uk/courses/modules/tm111) (2021) ✅
     - [Introducing statistics](https://www.open.ac.uk/courses/modules/m140) (2021) ✅
+
+<!-- -->
 
 ## Interesting 🤔
 

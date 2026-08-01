@@ -46,7 +46,6 @@ According to HTB, the goal of this tier is to:
 
 > *Cover the absolute **fundamentals of attacking a Box**. You'll learn **how to connect to the VPN**, perform **basic enumeration of ports and services**, and **interact with the services you find**. Each Box in this Tier is focused on a particular tool or service and contains only a single primary step.*
 
-
 Tier 0 contained 8 rooms in total and the final task of each machine was to find a single flag, the `flag.txt` file. Each machine included a walkthrough that was similary structured, and, usually, consisted of three sections:
 1. **Introduction**: General information for setting up the room's context.
 2. **Enumeration**: How to use `nmap` for port scanning and how to perform service-specific enumeration.

@@ -65,7 +65,6 @@ image:
 
     ![](flag.png){: .normal}
 
-
 ## Solution 2
 
 6. There is also [Selinger's MD5 Collision Demo](https://www.mscs.dal.ca/~selinger/md5collision/) which includes different binaries with the same MD5 hash:

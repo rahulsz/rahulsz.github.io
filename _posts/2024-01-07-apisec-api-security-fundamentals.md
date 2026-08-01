@@ -176,8 +176,11 @@ Best practice is to make API testing part of your overall testing program alongs
 ![](https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/site/2147573912/products/750d255-e5ff-714b-ddd-386ffe2c546f_66.jpg){: width="70%"}
 
 Monitoring appoaches can be:
+
 - **Proactive - Blocking**: you can enforce policy.
 - **Reactive - Alerting**: you might not have enough context to make judgements about the traffic's nature. For instance, in the Coinbase breach, the HTTP request had nothing abnormal in it.
+
+<!-- -->
 
 ![](https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/site/2147573912/products/750d255-e5ff-714b-ddd-386ffe2c546f_66.jpg){: width="70%"}
 

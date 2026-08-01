@@ -33,6 +33,8 @@ Suppose that two requests are sent containing the following `TrackingId` cookie 
 - The first of these values cause the query to return results, because the injected `AND '1' = '1` condition is true. As a result, the "*Welcome back*" message is displayed.
 - The second value causes the query to not return any results, because the condition injected is false. The "*Welcome back*" message is not displayed.
 
+<!-- -->
+
 This allows us to determine the answer to any single injected condition, and extract data one piece at a time.
 
 Suppore there is a table called `Users` with the columns `Username` and `Password`, and a user called `Administrator`. We can determine the password for this user by sending a series of inputs to test the password one character at a time. To do this, we can start with the following input:

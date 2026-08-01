@@ -83,7 +83,6 @@ curl -s http://mercury.picoctf.net:29649/check -H "Cookie: name=18;"
 <head>
     <title>Cookies</title>
 
-
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="https://getbootstrap.com/docs/3.3/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
@@ -111,7 +110,6 @@ curl -s http://mercury.picoctf.net:29649/check -H "Cookie: name=18;"
             <p class="lead"></p>
             <p style="text-align:center; font-size:30px;"><b>Flag</b>: <code>picoCTF{<SNIP>}</code></p>
         </div>
-
 
         <footer class="footer">
             <p>&copy; PicoCTF</p>

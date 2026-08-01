@@ -12,10 +12,13 @@ image:
 ## 1 Summary
 
 <!-- Replace text-summary with graph -->
+
 - **Enumeration** with _nmap_
 - **LFI exploitation** and **Directory Traversal** with _Burp Suite (Proxy, Repeater)_, _Metasploit_
 - **Vertical PrivEsc via SUDO** with _GTFOBins_
 - **Container Escape** via _Scheduled Scripts_
+
+<!-- -->
 
 ## 2 Background Information
 
@@ -54,8 +57,11 @@ Upon visiting the web server we come across a page where we can select and view 
 ![homepage](homepage.png){: width:"500px" height:"300px"}
 
 If we notice the address bar on our browser, it becomes like this when selecting:
+
 - A dog: `http://10.10.123.178/?view=dog`
 - A cat: `http://10.10.123.178/?view=cat`
+
+<!-- -->
 
 This is where some background knowledge on LFI will come handy. The last part of the aforementioned URLs are called **parameters**. These can be manipulated and exploited, given that the web app lacks proper **input validation**.
 

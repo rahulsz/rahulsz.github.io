@@ -34,9 +34,12 @@ PORT     STATE SERVICE VERSION
 ```
 
 Nmap info:
+
 - We have an SSH server available but we will need some form of credentials to use that.
 - We have a webserver redirecting to `codify.htb`, so we will have to add that to our `/etc/hosts` file.
 - We have port `3000` open which servers Node.js Express. We will need to find out about that.
+
+<!-- -->
 
 Let's first add the domain to our `hosts` file:
 

@@ -53,9 +53,12 @@ aiwefwlguh
 ```
 
 The three lines of output demonstrate that:
+
 - The original `stockreport.pl` command was executed without its expected arguments, and so returned an error message.
 - The injected `echo` command was executed, and the supplied string was echoed in the output.
 - The original argument `29` was executed as a command, which caused an error.
+
+<!-- -->
 
 Placing the additional command separator `&` after the injected command is useful because it separates the injected command from whatever follows the injection point. This reduces the chance that what follows will prevent the injected command from executing.
 

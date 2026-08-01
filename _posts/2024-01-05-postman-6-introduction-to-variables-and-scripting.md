@@ -148,6 +148,7 @@ console.log(myVar2) // => See, I changed
 You can now use `{{id}}` anywhere in your collection to access this value.
 
 **Tips to resolve all your errors**:
+
 - **Read the test messages**. Use them as hints to fix your **Postman Library API v2 collection**. Save any changes you make, then send your test request again.
 - **Re-read the instructions of previous lessons** carefully for the areas you missed.
 - **Make sure your requests are in the order presented in the course!**

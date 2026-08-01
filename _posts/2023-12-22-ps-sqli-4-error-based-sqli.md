@@ -12,8 +12,11 @@ image:
 ## Error-based SQLi
 
 **Error-based SQLi** refers to cases where we are able to use error messages to either extract or infer sensitive data from the database, even in blind contexts. The possibilities depend on the database configuration and the error types we are able to trigger:
+
 - We may be able to induce the app to return a specific error response based on the result of a boolean expression. We can exploit this in the same way as the [condition responses](https://cspanias.github.io/posts/PS-SQLi-3.-Blind-SQLi/#exploiting-blind-sqli-by-triggering-conditional-responses).
 - We may be able to trigger error messages that output the data returned by the query. This effectively turns the otherwise blind SQLi vulnerabilities into visible ones ([extracting sensitive data via verbose SQL error messages](https://portswigger.net/web-security/sql-injection/blind#extracting-sensitive-data-via-verbose-sql-error-messages)).
+
+<!-- -->
 
 ## Exploiting blind SQLi by triggering conditional errors
 
@@ -26,8 +29,11 @@ Suppot that two requests are sent containing the following `TrackingId` cookie v
 ![](cookie_values.png){: .normal}
 
 These inpus use the `CASE` keyword to test a condition and return a different expression depending on whether the expression is true:
+
 - With the first input, the `CASE` expression evaluates to `'a'`, which does not cause any error.
 - With the second input, it evaluates to `1/0`, which causes a divide-by-zero error.
+
+<!-- -->
 
 If the error causes a difference in the app's HTTP response, we can use this to determine whether the injected condition is true. Using this technique, we can retrieve data by testing one character at a time:
 

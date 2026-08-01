@@ -16,19 +16,25 @@ image:
 ## How to detect SQLi vulnerabilities
 
 We can detect SQLi vulnerabilities manually using a systemic set of tests against every entry point in the app by typically submitting:
+
 - The **single quote** character, `'`, and look for errors or other anomalies.
 - Some **SQL-specific syntax** that evaluates to the base (original) value of the entry point, and to a different value, and look for systematic differences in the app responses.
 - **Boolean conditions**, such as `1=1` and `OR 1=2`, and look for differences in the app's responses.
 - Payloads designed to trigger **time delays** when executed within a SQL query, and look for differences in response times.
 - **Out of band Application Security Testing (OAST)** payloads designed to trigger an out-of-band network interaction when executed within a SQL query, and monitor any resulting interactions.
 
+<!-- -->
+
 > Alternatively, you can find the majority of SQLi vulnerabilities quickly and reliably using Burp Scanner.
 
 Most SQLi vulnerabilities occuer within the `WHERE` clause of a `SELECT` query. However, they can occur at any location within the query, and within different query types. Some other common locations where SQLi arises are:
+
 - In `UPDATE` statements, within the updated values or the `WHERE` clause.
 - In `INSERT` statements, within the inserted values.
 - In `SELECT` statements, within the table or column name.
 - In `SELECT` statements, whithn the `ORDER BY` clause.
+
+<!-- -->
 
 ## Retrieving hidden data
 

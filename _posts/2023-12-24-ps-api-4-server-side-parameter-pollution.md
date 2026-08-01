@@ -12,9 +12,12 @@ image:
 ## Server-side parameter pollution (SSPP)
 
 Some systems contain internal APIs that aren't directly accessible from the internet. **SSPP**, aka **HTTP parameter pollution**, occurs when a website embeds user input in a server-side request to an internal API without adequate encoding. This means that an attacker may be able to manipulate or inject params, which may enable them to:
+
 - Override existing params.
 - Modify the app's behavior.
 - Access unauthorized data.
+
+<!-- -->
 
 We can test any user input for any kind of parameter pollution: query-parameters, form fields, headers, and URL path parameters.
 
@@ -49,9 +52,12 @@ Again, we should then review the response for clues about how the additional par
 To confirm whether the app is vulnerable to SSPP, we could try to override the original parameter. We can do this by injecting a second parameter with the same name: `GET /userSearch?name=peter%26name=carlos&back=/home`. This will be translated to the following server-side request to the internal API: `GET /users/search?name=peter&name=carlos&publicProfile=true`.
 
 The internal API interprets two `name` parameters. The impact of this depends on how the app processes the second parameter. This varies across different web technologies:
+
 - **PHP parses the last parameter only**. This would result in a user search for `carlos`.
 - **ASP.NET combines both parameters**. This would result in a user search for `peter,carlos`, which might result in an `Invalid username` error message.
 - **Node.js/express parses the first parameter only**. This would result in a user search for `peter`, giving an unchanged result.
+
+<!-- -->
 
 If we are able to override the original parameter, we may be able to conduct an exploit. For instance, we could add `name=administrator` to the request which may enable us to log in as the user `administrator`.
 
@@ -138,9 +144,12 @@ If we are able to override the original parameter, we may be able to conduct an 
 ## Testing for SSPP in REST paths
 
 A RESTful API may place parameter names and values in the URL path, rather than the query string. For example, consider the following path: `/api/users/123`. The URL path might be broken down as follows:
+
 - `/api` is the root API endpoint.
 - `/users` represents a resource, in this case `users`.
 - `/123` represents a parameter, here an identifier for the specific user.
+
+<!-- -->
 
 Consider an app that enables us to edit user profiles based on their username. Requests are sent to the following endpoint: `GET /edit_profile.php?name=peter`. This results in the following server-side request: `GET /api/private/users/peter`. An attacker may be able to manipulate server-side URL path parameters to exploit the API.
 

@@ -12,6 +12,8 @@ image:
 - **Vulnerability:** Sudo Abuse (`NOPASSWD` execution of `/usr/bin/less`)
 - **Flag:** `ctf{!ns3cur3_sud0}`
 
+<!-- -->
+
 ---
 
 ### 1. Initial Recon
@@ -68,5 +70,6 @@ flag (END)
 ```
 
 ### 4. Mitigation
+
 - Avoid providing `NOPASSWD` sudo execution rights for utilities like `less`, `more`, `vi`, `awk`, etc., that allow reading arbitrary files or spawning interactive shells.
 - If necessary, restrict the files that can be viewed using `less` in the sudoers file (e.g., `/usr/bin/less /var/log/syslog`).

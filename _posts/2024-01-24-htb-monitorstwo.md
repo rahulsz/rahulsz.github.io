@@ -40,8 +40,11 @@ PORT   STATE SERVICE VERSION
 ```
 
 Info from Nmap's output:
+
 - `nginx 1.18.0` web server listening, seems a login portal.
 - SSH server listening, but we need creds for using it.
+
+<!-- -->
 
 ## Initial Foothold
 
@@ -276,7 +279,6 @@ So what we need to is:
 2. Issue the appropriate permissions to the `bash` binary with the `chmod u+s /bin/bash` command.
 3. Clone CVE-2021-41091's PoC on our attack host, transfer the bash script (`exp.sh`) on the target using `marcus` account via the SSH, and execute it using the `marcus` user.
 
-
 Repeat our foothold and gain root within the container:
 
   ```bash
@@ -498,6 +500,7 @@ www-data@50bca5e748b0:/var/www/html$ find . | grep config
 
 # searching for database-related strings within the configuration file
 www-data@50bca5e748b0:/var/www/html$ grep database include/config.php
+
  * Make sure these values reflect your actual database/host/user/password
 $database_type     = 'mysql';
 $database_default  = 'cacti';
@@ -522,6 +525,7 @@ $database_persist  = false;
 #$rdatabase_ssl_key  = '';
 #$rdatabase_ssl_cert = '';
 #$rdatabase_ssl_ca   = '';
+
  * Save sessions to a database for load balancing
  * are defined in lib/database.php
 ```

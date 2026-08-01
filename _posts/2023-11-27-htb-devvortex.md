@@ -68,7 +68,6 @@ Detected Plugins:
 [ HTML5 ]
         HTML version 5, detected by the doctype declaration
 
-
 [ HTTPServer ]
         HTTP server header string. This plugin also attempts to
         identify the operating system from the server header.
@@ -433,7 +432,6 @@ User logan may run the following commands on devvortex:
 
 > [CVE-2023-1326](https://nvd.nist.gov/vuln/detail/CVE-2023-1326#:~:text=Description,local%20attacker%20can%20escalate%20privilege.): [PoC](https://github.com/canonical/apport/commit/e5f78cc89f1f5888b6a56b785dddcb0364c48ecb)
 
-
 ### Creating and keeping a crash report (using `less`).
 
 ```shell
@@ -476,6 +474,7 @@ What would you like to do? Your options are:
 Please choose (S/V/K/I/C): v
 v^J
 WARNING: terminal is not fully functional
+
 -  (press RETURN)
 :!id
 !iidd!id

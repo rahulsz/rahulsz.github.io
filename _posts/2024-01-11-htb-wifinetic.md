@@ -43,9 +43,12 @@ PORT   STATE SERVICE    VERSION
 ```
 
 We get some interesting results back:
+
 - There is an **FTP server** on port `21` with the `anonymous` login option enabled, and we can see that 5 files are there.
 - There is an SSH server, but we don't have any credentials to leverage that yet.
 - Port `53` is open and listening, but probably firewalled.
+
+<!-- -->
 
 > [What `tcpwrapped` means](https://secwiki.org/w/FAQ_tcpwrapped).
 
@@ -110,11 +113,16 @@ mget employees_wellness.pdf [anpqy?]? y
 ```
 
 After checking the PDF and TXT files, this is what we have:
+
 - The `ProjectOpenWRT.pdf` file has the name of the Network Admin:
+
+<!-- -->
 
 	![](olivia_admin.png){: .normal width="55%"}
 
 - The `employees_wellness.pdf` has the name of the HR Manager:
+
+<!-- -->
 
 	![](samantha_hr.png){: .normal width="70%"}
 
@@ -146,9 +154,12 @@ drwxr-xr-x 3 kali kali 4096 Sep 11 16:22 opkg
 ```
 
 The archive included a ton of files. After going through everything, we have:
+
 - A list of users provided by the `passwd` file.
 - A list of groups within the `group` file.
 - An interesting comment at the end of the `profile` file.
+
+<!-- -->
 
 ```bash
 $ cat passwd
@@ -562,7 +573,6 @@ We can now create our password-spay script:
 $ cat spray.sh
 # make a user list from /etc/passwd file
 users=$(awk -F: '{ if ($NF ~ /sh$/) print $1}' /etc/passwd)
-
 
 for user in $users 
 do

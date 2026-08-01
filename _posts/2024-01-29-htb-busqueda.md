@@ -78,7 +78,10 @@ $ ffuf -u http://searcher.htb/FUZZ -w /usr/share/seclists/Discovery/Web-Content/
 
 [Status: 405, Size: 153, Words: 16, Lines: 6, Duration: 104ms]
 | URL | http://searcher.htb/search
+
     * FUZZ: search
+
+<!-- -->
 
 # sub-domain fuzzing
 $ ffuf -u http://FUZZ.searcher.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -c -ac -ic
@@ -183,14 +186,19 @@ Search known vulns for `Gitea 1.18.0` gives us nothing back.
 
 Let's try to perform a brute force attack (BFA) against the login form. In order to perform our BFA we need to obtain the required information: 
 1. Does it use **Basic Authentication** or is it a **login form**?
+
 	- In our case it is a login form.
 2. Is it a `GET` or a `POST` login form?
+
 	- If it passes parameters within the URL address bar, it is a `GET`, otherwise it is a `POST`.
 3. What are the parameters?
+
 	- We can find them using burp, zap, or just brower's tools.
 4. What is unique on the page during a failed login attempt?
+
 	- We can find this by looking the page source code after a failed login attempt.
 
+<!-- -->
 
 When we attempt to login with random creds, no parameters are added to the URL address bar, such as `username` and `password`, which indicates that this is a `POST` login form:
 
@@ -559,9 +567,12 @@ $ ffuf -request searchRequest -request-proto http -w /usr/share/seclists/Fuzzing
 ![](burp_contentLength.png)
 
 We can now try perform a kind of SQLi, but using Python syntax. We know that:
+
 - The quote symbol (`'`) is used to enclose strings.
 - The parameters in Python functions are enclosed in parentheses (`()`).
 - The hash symbol (`#`) is used to write comments in Python.
+
+<!-- -->
 
 Thus, we can start playing around with that until we get a response back:
 

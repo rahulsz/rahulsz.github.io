@@ -51,7 +51,6 @@ Gobuster's output includes a lot of **HTTP redirection codes** (_[HTTP status co
 
 ![wp-login](wp-login.png)
 
-
 The `/robots` directory includes the following:
 
 ![robots.txt](robots.png)

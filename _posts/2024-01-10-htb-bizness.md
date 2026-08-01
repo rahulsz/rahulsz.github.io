@@ -41,9 +41,12 @@ PORT      STATE SERVICE    VERSION
 ```
 
 Info from Nmap scan:
+
 - SSH server is listening but we need valid credentials for leveraging it.
 - Webserver redirects to port `443` and `bizness.htb` domain -> need to add this to `/etc/hosts`.
 - Port `43903` open -> need to find out what that is.
+
+<!-- -->
 
 After searching around for what `tcpwrapped` means, we find an article on [secwiki](https://secwiki.org/w/FAQ_tcpwrapped):
 
@@ -274,7 +277,5 @@ root@bizness:/home/ofbiz# cat /root/root.txt
 b90bcb5567cdac3791d313c8bc43e785
 ```
  -->
-
-
 
 ![](machine_pwned.png){: width="65%" .normal}

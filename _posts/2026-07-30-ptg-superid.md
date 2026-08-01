@@ -12,6 +12,8 @@ image:
 - **Vulnerability:** SGID Abuse (`/usr/bin/sed`)
 - **Flag:** `ctf{su!d_b!n4r!es_4r3_b4d_f0r_s3cur!ty}`
 
+<!-- -->
+
 ---
 
 ### 1. Initial Recon
@@ -80,5 +82,6 @@ ctf{su!d_b!n4r!es_4r3_b4d_f0r_s3cur!ty}
 ```
 
 ### 4. Mitigation
+
 - Remove the SGID bit from the `sed` binary unless absolutely required by the system design: `chmod -s /usr/bin/sed`.
 - Ensure standard Unix utilities are not assigned SGID/SUID bits pointing to arbitrary user groups without thorough security review.

@@ -58,8 +58,11 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
 We have:
+
 - An SSH server, but we will need valid credentials to use that.
 - A `nginx/1.18.0` webserver which redirects to `pilgrimage.htb`, so we should add this domain to our local `/etc/hosts` file. 
+
+<!-- -->
 
 ```bash
 $ cat /etc/hosts | grep pi

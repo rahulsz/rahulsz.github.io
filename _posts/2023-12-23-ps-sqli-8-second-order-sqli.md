@@ -21,7 +21,6 @@ For this reason, second-order SQLi is also known as **stored SQLi**.
 
 Stored SQLi often occurs in situations where developers are aware of SQLi vulnerabilities, and so safely handle the initial placement of the input into the database. When the data is later processed, it is deemed to be safe, since it was previously placed into the database safely. At this point, the data is handled in an unsafe way, because the developer wrongly deems it to be trusted.
 
-
 ## Resources
 
 - [SQL injection](https://portswigger.net/web-security/learning-paths/sql-injection).

@@ -14,6 +14,7 @@ image:
 **Information disclosure**, aka **information leakage**, is when a website unintentionally reveals sensitive info to its users, such as data about other users, business data, technical details about the website and its infrastructure, etc. The latter can be the starting point for exposing an additional attack surface leading to high-severity attacks.
 
 Sometimes, sensitive info might be carelessly leaked to users who are simply browsing the website. However, an attacker needs to elicit the info disclosure by interacting with the webiste in unexpected or malicious ways. Some basic examples of info disclosure are:
+
 - Revealing the names of hidden directories, their structure, and their contents via a `robots.txt` file or directory listing
 - Providing access to source code files via temporary backups
 - Explicitly mentioning database table or column names in error messages
@@ -21,12 +22,17 @@ Sometimes, sensitive info might be carelessly leaked to users who are simply bro
 - Hard-coding API keys, IP addresses, database credentials, and so on in the source code
 - Hinting at the existence or absence of resources, usernames, and so on via subtle differences in application behavior
 
+<!-- -->
+
 ## How do information disclosure vulnerabilities arise?
 
 Info disclosure vulnerabilities can broadly be categorized as follows:
+
 - **Failure to remove internal content from public content**. For example, developer comments in markup are sometimes visible to users in the production environment.
 - **Insecure configuration of the website and related technologies**. For example, failing to disable debugging and diagnostic features can sometimes provide attackers with useful tools to help them obtain sensitive information. Default configurations can also leave websites vulnerable, for example, by displaying overly verbose error messages.
 - **Flawed design and behavior of the application**. For example, if a website returns distinct responses when different error states occur, this can also allow attackers to enumerate sensitive data, such as valid user credentials.
+
+<!-- -->
 
 ## What is the impact of information disclosure vulnerabilities?
 
@@ -43,10 +49,13 @@ It is important not to develop tunnel vision during testing, i.e., avoid focusin
 If we identify interesting parameters, we can try submitting unexpected data types and specially crafted fuzz strings to see what effect this has. We need to pay close attention: although responses sometimes may explicitly discole interesting info, they can also hint at the app's behavior more subtly, for example, the time taken to process the request. Even if the content of an error message does not disclose anything, sometimes the fact that one error case was encountered instead of another one is useful info in itself.
 
 We can automate much of this process using tools like Intruder:
+
 - **Add payload positions to parameters and use pre-built wordlists** of fuzz strings to test a high volume of different inputs in quick succession.
 - **Easily identify differences in responses** by comparing HTTP status codes, response times, lengths, etc.
 - Use **grep matching rules** to quickly identify occurences of keywords, such as `error`, `invalid`, `SELECT`, etc.
 - Apply **grep extraction rules** to extract and compare the content of interesting items within responses.
+
+<!-- -->
 
 We can also use the *Logger++* extension which allows us to define advanced filters for highlighting interesting entries.
 
@@ -59,9 +68,12 @@ We can also use the *Logger++* extension which allows us to define advanced filt
 ### Using Burp's engagement tools (Pro version only)
 
 Burp provides several engagement tools that we can use to find interesting info in the target website. We can access them from the context menu: just right-click on any HTTP message, Burp Proxy entry, or item in the site map and go to *Engagement tools*. The following tools are particularly useful:
+
 - **Search**: We can use this tool to look for any expression within the selected item. We can fine-tune the results using various advanced search options, such as regex search or negative search. This is useful for quickly finding occurrences (or absences) of specific keywords of interest.
 - **Find comments**: We can use this tool to quickly extract any developer comments found in the selected item. It also provides tabs to instantly access the HTTP request/response cycle in which each comment was found.
 - **Discover content**: We can use this tool to identify additional content and functionality that is not linked from the website's visible content. This can be useful for findining additional directories and files that won't necessary appear in the site map automatically.
+
+<!-- -->
 
 ![](burp_engagement_tools.jpg)
 
@@ -112,10 +124,13 @@ Differences between error messages can also reveal different app behavior that i
 ### Debugging data
 
 For debugging purposes, many websites generate custom error messages and logs that contain large amounts of info about the app's behavior. Debug messages can sometimes contain vital info for developing an attack, such as:
+
 - Values for key session variables that can be manipulated via user input
 - Hostnames and credentials for back-end components
 - File and directory names on the server
 - Keys used to encrypt data transmitted via the client
+
+<!-- -->
 
 Debugging info may sometimes be logged in a separate file. If an attacker is able to gain access to this file, it can serve as a useful reference for understanding the app's runtime state. It can also provide several clues as to how they can supply crafted input to manipulate the app state and control the information received.
 
@@ -305,12 +320,14 @@ While it is often impractical to manually browse the raw file structure and cont
 ## How to prevent information disclosure vulnerabilities
 
 There are some general best practices that we can follow to minimize the risk of this kind of vulnerability:
+
 - Make sure that everyone involved in producing the website is fully aware of what information is considered sensitive. Sometimes seemingly harmless information can be much more useful to an attacker than people realize. Highlighting these dangers can help make sure that sensitive information is handled more securely in general by your organization.
 - Audit any code for potential information disclosure as part of your QA or build processes. It should be relatively easy to automate some of the associated tasks, such as stripping developer comments.
 - Use generic error messages as much as possible. Don't provide attackers with clues about application behavior unnecessarily.
 - Double-check that any debugging or diagnostic features are disabled in the production environment.
 - Make sure you fully understand the configuration settings, and security implications, of any third-party technology that you implement. Take the time to investigate and disable any features and settings that you don't actually need.
 
+<!-- -->
 
 ## Resources
 

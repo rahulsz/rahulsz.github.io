@@ -14,6 +14,8 @@ image:
 - [How to install dvwa on Kali](https://www.kali.org/tools/dvwa/).
 - [Official GitHub repository](https://github.com/digininja/DVWA).
 
+<!-- -->
+
 > The DVWA server itself contains instructions about almost everything.
 
 _**Damn Vulnerable Web Application (DVWA)** is a PHP/MySQL web application that is damn vulnerable. Its main goal is to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and to aid both students & teachers to learn about web application security in a controlled class room environment._
@@ -31,6 +33,8 @@ The DVWA server has **4 different security levels** which can be set as seen bel
 - **High**: This option is an extension to the medium difficulty, with a mixture of harder or alternative bad practices to attempt to secure the code. The vulnerability may not allow the same extent of the exploitation, similar in various Capture The Flags (CTFs) competitions.
 - **Impossible**: This level should be secure against all vulnerabilities. It is used to compare the vulnerable source code to the secure source code.
 
+<!-- -->
+
 ## Command Injection
 
 The purpose of the **command injection** attack is to inject and execute commands specified by the attacker in the vulnerable application. In situation like this, the application, which executes unwanted system commands, is like a pseudo system shell, and the attacker may use it as any authorized system user. However, commands are executed with the same privileges and environment as the web service has.
@@ -40,8 +44,11 @@ Command injection attacks are possible in most cases because of lack of correct 
 The syntax and commands may differ between the Operating Systems (OS), such as Linux and Windows, depending on their desired actions. This attack may also be called "Remote Command Execution (RCE)".
 
 How it works:
+
 - When we want to execute more than one command we use concatenating characters to chain commands, such as `;`, `&&`, and `||`.
 - The commands are executed from left to right.
+
+<!-- -->
 
 > `&&` and `||` are [Boolean operators](https://www.scaler.com/topics/linux-operators/).
 

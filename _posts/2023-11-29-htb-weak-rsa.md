@@ -17,7 +17,6 @@ image:
 |Time|-|
 |Category|Crypto|
 
-
 ## Enumeration
 
 All we have is:

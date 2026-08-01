@@ -48,8 +48,11 @@ Note that are there two columns:
 ## Query parameters
 
 Remember that the minimum ingredients you need to make a request are:
+
 - A **request method**
 - A **request URL**
+
+<!-- -->
 
 Some APIs allow you to refine your request further with key-value pairs called **query parameters**.
 
@@ -156,7 +159,6 @@ According to the [API documentation](https://documenter.getpostman.com/view/1556
 4. **Save** and **Send** your request. You should get a `200 OK` response with a single JSON object that represents the "*Ficciones*" book:
 
     ![](https://whimuc.com/PwqrrQiv3tT4JsqRDkan2a/ApVSsJNYMMug2R.png){: .normal}
-
 
 ### Debugging request in the Postman Console
 

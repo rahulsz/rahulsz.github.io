@@ -19,7 +19,6 @@ image:
 **Privilege escalation**:  
 	Privileges can then be escalated by performing a path traversal attack on a command defined in the sudoers file, which contains a wildcard for executing `JavaScript` files.
 
-
 ## Initial Foothold
 
 >_IppSec's [video walkthrough](https://www.youtube.com/watch?v=fWMHh8GYqJE)._
@@ -80,44 +79,69 @@ $ ffuf -u http://dev.stocker.htb/FUZZ -w /usr/share/wordlists/seclists/Discovery
 [Status: 302, Size: 28, Words: 4, Lines: 1, Duration: 117ms]
 | URL | http://dev.stocker.htb/
 | --> | /login
+
     * FUZZ:
+
+<!-- -->
 
 [Status: 200, Size: 2667, Words: 492, Lines: 76, Duration: 74ms]
 | URL | http://dev.stocker.htb/login
+
     * FUZZ: login
+
+<!-- -->
 
 [Status: 301, Size: 179, Words: 7, Lines: 11, Duration: 50ms]
 | URL | http://dev.stocker.htb/static
 | --> | /static/
+
     * FUZZ: static
+
+<!-- -->
 
 [Status: 200, Size: 2667, Words: 492, Lines: 76, Duration: 37ms]
 | URL | http://dev.stocker.htb/Login
+
     * FUZZ: Login
+
+<!-- -->
 
 [Status: 302, Size: 28, Words: 4, Lines: 1, Duration: 80ms]
 | URL | http://dev.stocker.htb/logout
 | --> | /login
+
     * FUZZ: logout
+
+<!-- -->
 
 [Status: 302, Size: 48, Words: 4, Lines: 1, Duration: 50ms]
 | URL | http://dev.stocker.htb/stock
 | --> | /login?error=auth-required
+
     * FUZZ: stock
+
+<!-- -->
 
 [Status: 302, Size: 28, Words: 4, Lines: 1, Duration: 75ms]
 | URL | http://dev.stocker.htb/Logout
 | --> | /login
+
     * FUZZ: Logout
+
+<!-- -->
 
 [Status: 301, Size: 179, Words: 7, Lines: 11, Duration: 66ms]
 | URL | http://dev.stocker.htb/Static
 | --> | /Static/
+
     * FUZZ: Static
+
+<!-- -->
 
 [Status: 302, Size: 28, Words: 4, Lines: 1, Duration: 34ms]
 | URL | http://dev.stocker.htb/
 | --> | /login
+
     * FUZZ:
 ```
 

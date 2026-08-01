@@ -12,9 +12,12 @@ image:
 ## Application Programming Interfaces
 
 An **Application Programming Interface (API)** is a *contract that allows code to talk to other code*. APIs are the building blocks of modern software because they allow for sharing of resources and services across applications, organizations, and devices. 
+
 - APIs help developers **integrate exciting features and build automation** without reinventing the wheel.
 - APIs allow enterprises to **open up their product** for faster innovation.
 - APIs **can be products themselves** (SaaS).
+
+<!-- -->
 
 ## APIs - A Digital Restaurant
 
@@ -36,9 +39,12 @@ APIs work the same way, but there are different names for the players involved:
 ### Medium
 
 While this courses focuses on Web APIs, this term can apply to a broader range of interfaces:
+
 - **Hardware APIs** - Interface for software to talk to hardware.
 - **Software Library APIs** - Interface for directly consuming code from another code base.
 - **Web APIs** - Interface for communicating across code based over a network.
+
+<!-- -->
 
 Multiple API types may be used to achieve a task. For example, uploading a photo to Instagram makes use of:
 1. **Hardware API** for tha app to talk to your camera.
@@ -48,6 +54,7 @@ Multiple API types may be used to achieve a task. For example, uploading a photo
 ### Architectures
 
 There is more than one way to build and consume APIs, such as:
+
 - REST (Representational State Transfer)
 - GraphQL
 - WebSockets
@@ -56,13 +63,18 @@ There is more than one way to build and consume APIs, such as:
 - gRPC (Google Remote Procedure Call)
 - MQTT (MQ Telemetry Transport)
 
+<!-- -->
+
 This course will focus on **REST APIs** since this is the most widely adopted API architecture. Some traits of REST APIs include not storing session state between requests, the ability to cache, and the ability to send and receive various data types.
 
 ### Access
 
 APIs also vary in the scope of who can access them:
+
 - **Public APIs (aka Open APIs)** - consumed by anyone who discovers the API.
 - **Private APIs** - consumed only within an org and not made public.
 - **Partner APIs** - consumed between one or more orgs that have an established relationship.
+
+<!-- -->
 
 The API we will use in this course will be a **Public, REST, Web API**.

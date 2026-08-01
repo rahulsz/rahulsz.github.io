@@ -34,9 +34,12 @@ The server fetches the contents of the `/admin` URL and returns it to the user.
 An attacker can visit the `/admin` URL directly, but its functionality is normally only accessible to authenticated users. However, **if the request comes from the local machine, the normal access controls are bypassed** and the app grants full access to the admin functionality, because the request appears to originate from a trusted location.
 
 This behaviour, i.e., apps implicitly trust requests coming from local machines, can arise for various reasons:
+
 - The access control check might be implemented in a different component that sits in front of the app server. When a connection is made back to the server, the check is bypassed.
 - For disaster recovery purposes, the app might allow admin access without logging in, to any user coming from the local machine. This provides a way for an admin to recover the system if they lose their credentials. This assumes that only a fully trusted user would come directly to the server.
 - The admin interface might listen on a different port number to the main app, and might not be reachable directly by the users.
+
+<!-- -->
 
 These kind of **trust relationships**, where requests originating from the local machine are handled differently than ordinary requests, often make SSRF into a critical vulnerability.
 
