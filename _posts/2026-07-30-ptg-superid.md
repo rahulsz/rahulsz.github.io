@@ -8,8 +8,6 @@ image:
     path: /assets/img/custom_banners/2026-07-30-ptg-superid_banner.png
 ---
 
-![Intro Banner](/assets/img/custom_banners/2026-07-30-ptg-superid_banner.png)
-
 - **Box:** PTG Superid
 - **Vulnerability:** SGID Abuse (`/usr/bin/sed`)
 - **Flag:** `ctf{su!d_b!n4r!es_4r3_b4d_f0r_s3cur!ty}`

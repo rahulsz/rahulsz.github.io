@@ -8,8 +8,6 @@ image:
     path: /assets/img/custom_banners/2026-07-30-ptg-sudoers_banner.png
 ---
 
-![Intro Banner](/assets/img/custom_banners/2026-07-30-ptg-sudoers_banner.png)
-
 - **Box:** PTG Sudoers
 - **Vulnerability:** Sudo Abuse (`NOPASSWD` execution of `/usr/bin/less`)
 - **Flag:** `ctf{!ns3cur3_sud0}`

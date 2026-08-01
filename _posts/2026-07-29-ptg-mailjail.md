@@ -8,8 +8,6 @@ image:
     path: /assets/img/custom_banners/2026-07-29-ptg-mailjail_banner.png
 ---
 
-![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-mailjail_banner.png)
-
 **CVE-2025-49113 — Roundcube RCE → LD_PRELOAD SUID PrivEsc**
 
 ## Phase 1 — Recon

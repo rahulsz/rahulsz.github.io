@@ -8,8 +8,6 @@ image:
     path: /assets/img/custom_banners/2026-07-29-ptg-alohomora_banner.png
 ---
 
-![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-alohomora_banner.png)
-
 ## Phase 1 — Reconnaissance
 We begin with a standard Nmap scan to identify open ports and running services on the target.
 ```bash

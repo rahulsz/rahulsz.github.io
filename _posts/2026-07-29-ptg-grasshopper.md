@@ -8,8 +8,6 @@ image:
     path: /assets/img/custom_banners/2026-07-29-ptg-grasshopper_banner.png
 ---
 
-![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-grasshopper_banner.png)
-
 **SSH Credential Leak + Root Private Key Reuse**
 
 ## Phase 1 — Recon

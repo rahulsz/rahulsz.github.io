@@ -8,8 +8,6 @@ image:
     path: /assets/img/custom_banners/2026-07-29-ptg-redpill_banner.png
 ---
 
-![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-redpill_banner.png)
-
 **Unauthenticated Redis RCE → Writable Cron Script**
 
 ## Phase 1 — Recon

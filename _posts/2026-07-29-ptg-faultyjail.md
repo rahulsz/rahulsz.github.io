@@ -8,8 +8,6 @@ image:
     path: /assets/img/custom_banners/2026-07-29-ptg-faultyjail_banner.png
 ---
 
-![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-faultyjail_banner.png)
-
 **CVE-2025-4123** — build script not yet supplied; foothold/privesc TBD
 
 ## Status

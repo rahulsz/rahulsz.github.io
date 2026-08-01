@@ -8,8 +8,6 @@ image:
     path: /assets/img/custom_banners/2026-07-29-ptg-provision_banner.png
 ---
 
-![Intro Banner](/assets/img/custom_banners/2026-07-29-ptg-provision_banner.png)
-
 **Command Injection (Flask ping utility) → Root Key via Cron**
 
 ## Phase 1 — Recon
