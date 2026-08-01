@@ -3,7 +3,7 @@ title: Learning Resources
 date: 2024-01-06
 categories: [Other, Notes]
 tags: [education, cybersecurity, openuniversity, ou, hack-the-box, try-hack-me, web-security, api-testing, penetration-testing, htb, thm, ethical-hacking]
-img_path: /assets/general
+img_path: /assets/img/general
 published: true
 image:
     path: hacker_studying.jpg

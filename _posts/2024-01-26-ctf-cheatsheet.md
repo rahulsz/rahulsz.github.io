@@ -3,7 +3,7 @@ title: CTF Cheatsheet
 date: 2024-01-26
 categories: [Cheatsheet]
 tags: [cheatsheet, ctf, capturetheflag, reverse-shell, shell, rce, hash, script, python, john, hashcat, suid]
-img_path: /assets/cheatsheet
+img_path: /assets/img/cheatsheet
 published: true
 image:
     path: cheatsheetCover.png
