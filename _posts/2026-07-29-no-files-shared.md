@@ -10,7 +10,7 @@ image:
 
 During the reconnaissance phase, an Nmap scan was performed against the target system.
 
-## 1. Port Scanning
+### 1. Port Scanning
 The scan revealed multiple open ports:
 - **22/tcp** → SSH
 - **25/tcp** → SMTP
@@ -21,7 +21,7 @@ The presence of RPCBind (111) and NFS (2049) indicates that the target is runnin
 
 ![Walkthrough Step](/assets/img/ptgarage_pages/no_files_shared/page_1.png)
 
-## 2. NFS Share Enumeration
+### 2. NFS Share Enumeration
 To identify accessible NFS shares, the following command was used:
 
 ```bash
@@ -34,7 +34,7 @@ This shows that the `/var/share` directory is exported and accessible to **all h
 
 ![Walkthrough Step](/assets/img/ptgarage_pages/no_files_shared/page_2.png)
 
-## 3. Mounting the NFS Share
+### 3. Mounting the NFS Share
 Since the share is publicly accessible, it was mounted locally:
 
 ```bash
@@ -45,7 +45,7 @@ ls /mnt
 
 ![Walkthrough Step](/assets/img/ptgarage_pages/no_files_shared/page_3.png)
 
-## 4. Analyzing the Retrieved Archive
+### 4. Analyzing the Retrieved Archive
 After mounting the NFS share, the file `package.tar.gz` was downloaded and extracted. The archive contained the `/root/.ssh/` directory which included the root user's SSH keys:
 - `authorized_keys`
 - `id_ecdsa` (Private Key)
@@ -53,7 +53,7 @@ After mounting the NFS share, the file `package.tar.gz` was downloaded and extra
 
 ![Walkthrough Step](/assets/img/ptgarage_pages/no_files_shared/page_4.png)
 
-## 5. Gaining SSH Access
+### 5. Gaining SSH Access
 First, proper permissions were set on the private key:
 
 ```bash

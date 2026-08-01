@@ -10,10 +10,10 @@ image:
 
 **CVE-2025-4123** — build script not yet supplied; foothold/privesc TBD
 
-## Status
+### Status
 The `build.sh` for this box (FaultyJail / CVE-2025-4123.zip) hasn't been uploaded yet, so the exact foothold and privesc chain can't be documented here.
 
-## What to do
+### What to do
 Send over the `build.sh` (or the CVE-2025-4123.zip) and I'll fill in the full walkthrough with the exact commands and paths, matching the format of the other labs.
 
 ## Flags

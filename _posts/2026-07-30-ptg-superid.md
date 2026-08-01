@@ -14,7 +14,7 @@ image:
 
 ---
 
-## 1. Initial Recon
+### 1. Initial Recon
 
 We are given a username, an SSH key, and an endpoint to connect to:
 
@@ -22,7 +22,7 @@ We are given a username, an SSH key, and an endpoint to connect to:
 ssh -i id_ecdsa user@35.184.207.253
 ```
 
-## 2. Privilege Escalation Vector
+### 2. Privilege Escalation Vector
 
 Now we can enumerate the server. We will look for binaries with the Set-Group-ID (SGID) bit set specifically for the group `ctf`:
 
@@ -55,7 +55,7 @@ ls -al /usr/bin/sed
 
 The binary `sed` is marked as SGID (`-rwxr-sr-x`) with the group owner as `ctf`.
 
-## 3. Exploitation
+### 3. Exploitation
 
 We can abuse this configuration to read the flag file, which is only readable by the user and group `ctf`. Since `sed` will execute with the group permissions of `ctf`, we can use it to read the file:
 
@@ -79,6 +79,6 @@ This successfully prints the flag:
 ctf{su!d_b!n4r!es_4r3_b4d_f0r_s3cur!ty}
 ```
 
-## 4. Mitigation
+### 4. Mitigation
 - Remove the SGID bit from the `sed` binary unless absolutely required by the system design: `chmod -s /usr/bin/sed`.
 - Ensure standard Unix utilities are not assigned SGID/SUID bits pointing to arbitrary user groups without thorough security review.

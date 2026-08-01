@@ -14,7 +14,7 @@ image:
 
 ---
 
-## 1. Initial Recon
+### 1. Initial Recon
 
 We are given an SSH key and an endpoint to connect to. We can connect using SSH:
 
@@ -22,7 +22,7 @@ We are given an SSH key and an endpoint to connect to. We can connect using SSH:
 ssh -i id_ecdsa user@35.239.205.196
 ```
 
-## 2. Privilege Escalation Vector
+### 2. Privilege Escalation Vector
 
 Once we are in as `user`, we can check our sudo privileges by running `sudo -l`:
 
@@ -43,7 +43,7 @@ User user may run the following commands on 20sudoers...:
 
 We can see that we can run the command `less` as the user `ctf` without needing a password.
 
-## 3. Exploitation
+### 3. Exploitation
 
 We can abuse this configuration to read the flag file, which is only readable by the user `ctf`, using the following command:
 
@@ -67,6 +67,6 @@ ctf{!ns3cur3_sud0}
 flag (END)
 ```
 
-## 4. Mitigation
+### 4. Mitigation
 - Avoid providing `NOPASSWD` sudo execution rights for utilities like `less`, `more`, `vi`, `awk`, etc., that allow reading arbitrary files or spawning interactive shells.
 - If necessary, restrict the files that can be viewed using `less` in the sudoers file (e.g., `/usr/bin/less /var/log/syslog`).

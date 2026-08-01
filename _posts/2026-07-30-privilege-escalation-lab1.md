@@ -14,7 +14,7 @@ image:
 
 ---
 
-## 1. Initial Recon
+### 1. Initial Recon
 
 We are provided with a downloadable ZIP file (`privilege_escalation_1.zip`). 
 
@@ -34,7 +34,7 @@ We use these credentials to SSH into the target:
 ssh -i id_ecdsa user@172.31.13.45 -p 323603
 ```
 
-## 2. Privilege Escalation Vector
+### 2. Privilege Escalation Vector
 
 Once logged in, we check the directories and find the `/home/ctf` user directory. However, we do not have permission to read the flag inside it:
 
@@ -58,7 +58,7 @@ User user may run the following commands on ctf-rahulshashidhar-...:
     (ctf : ctf) NOPASSWD: /usr/bin/git
 ```
 
-## 3. Exploitation
+### 3. Exploitation
 
 The system allows our low-privileged `user` to run `/usr/bin/git` as the `ctf` account without entering a password. 
 
@@ -81,6 +81,6 @@ This successfully triggers the payload and prints the flag:
 ctf{esc4l4t!ng_pr!v!l3g3s}
 ```
 
-## 4. Mitigation
+### 4. Mitigation
 - Never grant `NOPASSWD` sudo access to large binaries like `git` that have extensive subcommands, configuration options, or pagination features.
 - If necessary to run specific git commands as another user, wrap them in a bash script and restrict sudo access exclusively to that script.
