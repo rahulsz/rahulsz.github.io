@@ -1,0 +1,60 @@
+---
+title: 7. SQLi in different contexts
+date: 2023-12-23
+categories: [PortSwigger, SQL injection]
+tags: [portswigger, sqli, sql, burp, xml, encoding, hackvertor]
+img_path: /assets/img/portswigger/sqli/other
+published: true
+image:
+    path: ../../portswigger_acad_logo.png
+---
+
+## SQLi in different contexts
+
+So far, we have used the query string to inject our malicious SQL payload. However, we can perform SQLi attacks using any controllable input that is processed as a SQL query. For example, some websites take input in JSON or XML format and use this to query the database.
+
+These different formats may provide different ways for us to obfuscate attacks that are otherwise blocked due to WAFs and other defence mechanisms. Weak implementations often look for common SQLi keywords within the request, so we may be able to bypass these filters by encoding or escaping characters in the prohibited keywords.
+
+For example, the following XML-based SQLi uses an XML escape sequence to encode the `s` character in `SELECT`:
+
+![](xml-payload.png)
+
+This will be decoded server-side before being passed to the SQL interpreter.
+
+### Lab: SQL injection with filter bypass via XML encoding
+
+> **Objective**: _This lab contains a SQLi vulnerability in its stock check feature. The results from the query are returned in the application's response, so you can use a UNION attack to retrieve data from other tables. The database contains a `users` table, which contains the usernames and passwords of registered users. To solve the lab, perform a SQLi attack to retrieve the `administrator` user's credentials, then log in to their account._
+
+> **Hint**: _A web application firewall (WAF) will block requests that contain obvious signs of a SQLi attack. You'll need to find a way to obfuscate your malicious query to bypass this filter. We recommend using the Hackvertor extension to do this._
+
+1. Let's first get ready by installed the Hackvertor extension:
+
+    ![](hackvertor.png)
+
+2. Now, let's see how the stock request looks like:
+
+    ![](lab1_stock_button.png)
+
+    ![](lab1_stock_burp.png){: .normal}
+
+3. The idea is to pass our SQLi UNION attack inside the XML part of the request:
+
+    ![](lab1_attack_detected.png)
+
+4. As the lab description mentions, there is a WAF that block common keywords used in SQLi attacks. Thus, we will need to obfuscate our input:
+
+    ![](lab1_hackvertor.png)
+
+    ![](lab1_encoding.png)
+
+5. The payload now works, so we can build our query and obtain the information required:
+
+    ![](lab1_admin_pass.png)
+
+    ![](lab1_solved.png)
+
+## Resources
+
+- [SQL injection](https://portswigger.net/web-security/learning-paths/sql-injection).
+- [SQLi Cheatsheet](https://portswigger.net/web-security/sql-injection/cheat-sheet).
+- Rhana's [video walkthrough](https://www.youtube.com/watch?v=ELdyZm0nK4g).

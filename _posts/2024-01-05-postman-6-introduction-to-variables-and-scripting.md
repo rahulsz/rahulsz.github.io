@@ -1,0 +1,155 @@
+---
+title: 6. Introduction to variables and scripting
+date: 2024-01-05
+categories: [Postman, Student Expert Certification]
+tags: [postman, api]
+img_path: /assets/img/postman/student_expert_cert
+published: true
+image:
+    path: postman_logo.png
+---
+
+## Variables in Postman
+
+Previously in the [**Request Parameters**](https://cspanias.github.io/posts/Postman-4.-Request-Parameters/) section, we saw how using a variable saved us time and helped reduce redundant copy-paste of the request URL using the double curly brace syntax like this: {{variableName}}. Remember, Postman allows you to save values as [variables](https://learning.postman.com/docs/sending-requests/variables/) so that you can:
+1. Reuse values to keep your work [DRY (Don't Repeat Yourself)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself#:~:text=%22Don't%20repeat%20yourself%22,data%20normalization%20to%20avoid%20redundancy.)
+2. Hide sensitive values like API Keys from being shared publicly.
+
+In this section, we will learn more about variables and introduce better practices that enables us to make dynamic requests.
+
+### Variable scopes
+
+You can set variables that live at various [scopes](https://learning.postman.com/docs/sending-requests/variables/#variable-scopes). Postman will resolve to the value at the nearest and narrowest scope. From broadest to narrowest, these scopes are **global**, **collection**, **environment**, **data**, and **local**.
+
+![](https://assets.postman.com/postman-docs/v10/var-scope-v10.jpg){: .normal width="60%"}
+
+If a variable with the same name is declared in two different scopes, the value stored in the variable with the narrowest scope will be used. For example, if there is a global variable named `username` and a local variable named `username`, the latter will be used when the request runs.
+
+We will work with **collection variables** today, which live at the collection level and can be accessed anywhere inside the collection.
+
+## Settings variables programmatically
+
+### Scripting in Postman
+
+Postman allows you to add automation and dynamic behaviors to your collections with [scripting](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/). Postman will automatically execute any provided scripts during two events in the request flow:
+1. Immediately before a request is sent: [pre-request script](https://learning.postman.com/docs/writing-scripts/pre-request-scripts/) (**Pre-request Script** tab of request).
+2. Immediately after a response comes back: [test script](https://learning.postman.com/docs/writing-scripts/test-scripts/) (**Tests** tab of request).
+
+In this lesson, we will focus on writing scripts in the **Tests** tab, which are executed when a response comes back from an API.
+
+### The `pm` object
+
+Postman has a helper object named [`pm`](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#the-pm-object) that gives you access to data about your Postman environment, requests, variables and testing utilities. For example, you can access the JSON response body from an API with: `pm.response.json()`. You can also programmatically get collection variables like the value of `baseUrl` with: `pm.collectionVariables.get(“baseUrl”)`.
+
+In addition to getting variables, you can also set them with: `pm.collectionVariables.set("variableName", "variableValue")`.
+
+## Task: Your first script
+
+If you are new to JavaScript, here are some basics.
+
+### Logging data
+
+In JS you can print data for a value to the console using this syntax:
+
+```javascript
+console.log("Hello world!")
+// => Hello world!
+```
+
+### Comments
+
+In JS you can add comments to your code. These are skipped by the interpreter,so you can use them to explain things in your code.
+
+```javascript
+// Single line comments start with two slashes. I am not code!
+
+/* You can write multi-line comments by 
+opening and closing with slash and asterisk. 
+I am not code!
+*/
+```
+
+### Add a script to your request
+
+1. In your **add a book** request, change the book data in your **Body** to a new book you like.
+2. Open the **Tests** tab of the request.
+3. Inside the **Tests Editor**, **add this JS code** to log the JSON response from the API:
+
+    ```javascript
+    console.log(pm.response.json())
+    ```
+
+    ![](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F4qlhnpfiaeqby6zwhuhhmacvx%2Fpublic%2F1694636073%2FScreen+Recording+2023-09-14+at+1.43.16+AM.1694636072345.gif)
+
+4. **Save** and **Send** your request. This will trigger the script in the **Tests** tab to run after the response comes back from the API.
+5. **Open the Postman Console** in the lower left of the window:
+
+    ![](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F4qlhnpfiaeqby6zwhuhhmacvx%2Fpublic%2F1694636318%2FScreen+Recording+2023-09-14+at+1.45.55+AM.1694636316551.gif)
+
+6. Scroll to the bottom of the logs in the console. You will see the more recent request: `POST https://library-api.poistmanlabs.com/books`. The response data from the API is logged in the console because of the code in our **Tests** tab. You can **expand the data** by clicking on the small arrow to the left:
+
+    ![](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F26fp2261340y1ukokimvca8su%2Fpublic%2F1649760951%2Ffirst+script+3.1649760951509.png)
+
+## Task: Grab the new book id
+
+Combining the power of variables and scripting gives you superpowers! Let's explore how you can automatically set a value for a variable via scripting. Saving a value as a variable allows you to use it in other requests. Using a **Test** script, let's grab the `id` of a newly added book and save it so we can use it in future requests.
+
+### Setting and getting collection variables
+
+The `pm` object allows you to set and get collection variables. To **set** a collection variable, use the `.set()` method with two parameters: the variable name and the variable value: `pm.collectionVariables.set("variableName", value)`. To **get** a collection variable use the `.get()` method and specify the name of the variable: `pm.collectionVariables.get("variableName")`.
+
+### Local variables
+
+We can also store local variables inside our **Test** script using JS. There are two ways to define a variable in JS: 
+1. Using the `const` keyword
+2. Using the `let` keyword
+
+`const` is for variables that won't change value, whereas `let` allows you to reassign the value later.
+
+```javascript
+// -- Defining variables with const --
+const myVar = "This variable can't be reassigned"
+console.log(myVar) // => This variable can't be reassigned
+
+// attempt to reassign the value of myVar
+myVar = "foo" 
+//=> [ERROR!] Uncaught TypeError: Assignment to constant variable.
+
+// -- Defining variables with let -- 
+let myVar2 = "I can change!"
+console.log(myVar2) // => I can change!
+
+myVar2 = "See, I changed!"
+console.log(myVar2) // => See, I changed
+```
+
+### Set the new book `id` as a variable
+
+1. In the **Body** tab of the **add a book** request, **change the book's details to add a new book**.
+2. In the **Tests** tab of thet **add a book** request, replace the `console.log()` statement with this code:
+
+    ```javascript
+    // save the value of the "id" value from the API JSON response to a const variable named "id"
+    const id = pm.response.json().id
+    // set the value of the "id" variable to a collection variable also called "id".
+    pm.collectionVariables.set("id", id)
+    ```
+
+    If there is no Collection variable named `id` postman will create a new variable named `id` and assign the value.
+
+3. **Save** and **Send** the request. When the `201` reponse comes back from the API, the test script will run and save the book's `id` as a collection variable automatically.
+
+    ![](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F4qlhnpfiaeqby6zwhuhhmacvx%2Fpublic%2F1694637148%2FScreen+Recording+2023-09-14+at+2.00.14+AM.1694637147685.gif)
+
+4. View your collection variables by clicking on your **Postmane Library API v2** collection, then the **Variables** tab. The `id` variable has been automatically assigned the id of your new book as its **CURRENT VALUE**.
+
+    ![](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F26fp2261340y1ukokimvca8su%2Fpublic%2F1649770495%2Fset+id+2.1649770495600.png)
+
+You can now use `{{id}}` anywhere in your collection to access this value.
+
+**Tips to resolve all your errors**:
+- **Read the test messages**. Use them as hints to fix your **Postman Library API v2 collection**. Save any changes you make, then send your test request again.
+- **Re-read the instructions of previous lessons** carefully for the areas you missed.
+- **Make sure your requests are in the order presented in the course!**
+- **Keep trying**. Once your collection passes all the local tests, you have successfully completed the course halfway! Pat yourself on your back, and let's continue!
+- If you still face problems, **check the [FAQ](https://academy.postman.com/page/postman-student-expert-frequently-asked-questions)** for common questions about how to resolve errors.

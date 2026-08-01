@@ -29,7 +29,7 @@ Once we are in as `user`, we can check our sudo privileges by running `sudo -l`:
 sudo -l
 ```
 
-![Terminal Output](/assets/ptgarage/ptg_sudoers/img_2_1.png)
+![Terminal Output](/assets/img/ptgarage/ptg_sudoers/img_2_1.png)
 
 **Output:**
 ```text
@@ -57,7 +57,7 @@ cat: flag: Permission denied
 sudo -u ctf less flag
 ```
 
-![Flag Screenshot](/assets/ptgarage/ptg_sudoers/img_3_1.png)
+![Flag Screenshot](/assets/img/ptgarage/ptg_sudoers/img_3_1.png)
 
 The `less` pager opens and displays the flag:
 
